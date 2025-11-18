@@ -1,17 +1,132 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫</text></svg>">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    {% block stylesheets %}{% endblock %}
+    {% block javascripts %}
+      {% block importmap %}{{ importmap('app') }}{% endblock %}
+    {% endblock %}
+  </head>
+<script>
+  const themes = [
+    "#ffffff",   // blanc
+    "#fff9c4",   // jaune
+    "#ffe0b2",   // orange
+    "#f8bbd0",   // rose
+    "#f0b465ff",   // rouge
+    "#e1bee7",   // mauve
+    "#bbdefb",   // bleu clair
+    "#62a965ff",   // 
+    "#dbd4906b",   //
+    "#eeeeeeff",   // gris
+    "linear-gradient(135deg, #d11212ff, #ff9900, #e0e01bff, #1bdb1bff, #2828c1ff, #8719d0ff)" // multicolore
+  ];
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+  let indexTheme = 0;
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const button = document.getElementById("themeButton");
+    button.addEventListener("click", function () {
+      const theme = themes[indexTheme];
+      document.body.style.background = theme;
+      document.body.style.color = (theme === "#000000" || theme === "#1e3a5f") ? "#f0f0f0" : "#1f1f24";
+      indexTheme = (indexTheme + 1) % themes.length;
+    });
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const themes = ['theme-vert', 'theme-bleu', 'theme-violet', 'theme-gris'];
+    let index = 0;
+
+    const card = document.getElementById('profil-card');
+    const button = document.getElementById('change-theme');
+
+    button.addEventListener('click', () => {
+      card.classList.remove(themes[index]);
+      index = (index + 1) % themes.length;
+      card.classList.add(themes[index]);
+    });
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const formes = ['forme-carree', 'forme-rond', 'forme-losange'];
+    let index = 0;
+
+    const card = document.getElementById('profil-card');
+    const button = document.getElementById('change-forme');
+
+    if (card && button) {
+      button.addEventListener('click', () => {
+        card.classList.remove(formes[index]);
+        index = (index + 1) % formes.length;
+        card.classList.add(formes[index]);
+      });
+    } else {
+      console.error("Élément introuvable : vérifie les ID dans ton HTML.");
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const themes = ['theme-lumineux', 'theme-arcenciel', 'theme-soleil', 'theme-menthe'];
+    let index = 0;
+
+    const card = document.getElementById('profil-card');
+    const button = document.getElementById('change-theme');
+
+    if (card && button) {
+      button.addEventListener('click', () => {
+        card.classList.remove(themes[index]);
+        index = (index + 1) % themes.length;
+        card.classList.add(themes[index]);
+      });
+    } else {
+      console.error("Élément introuvable : vérifie les ID dans ton HTML.");
+    }
+  });
+</script>
+  <body class="theme-clair">
+   <header>
+  <nav class="menu-cube">
+    <ul>
+      <li><a href="{{ path('accueil') }}" class="{% if app.request.attributes.get('_route') == 'accueil' %}active{% endif %}">Accueil</a></li>
+      <li><a href="{{ path('a_propos') }}" class="{% if app.request.attributes.get('_route') == 'a_propos' %}active{% endif %}">À propos</a></li>
+      <li><a href="{{ path('services') }}" class="{% if app.request.attributes.get('_route') == 'services' %}active{% endif %}">Services</a></li>
+      <li><a href="{{ path('contact') }}" class="{% if app.request.attributes.get('_route') == 'contact' %}active{% endif %}">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+    <!-- Contenu principal -->
+    {% block body %}{% endblock %}
+
+    <!-- Pied de page -->
+    <footer>
+      <p>© KHADIM DIAGNE – 2025</p>
+      <p>
+        <a href="https://www.instagram.com/kdiagne799?igsh=aDQ2bTEydXJ2ZDhq" target="_blank">Instagram</a> |
+        <a href="https://snapchat.com/t/8jlwnV3a" target="_blank">Snapchat</a>
+      </p>
+    </footer>
+
+    <!-- Script changement de thème -->
+    <script>
+      function changerTheme() {
+        const body = document.body;
+        if (body.classList.contains('theme-clair')) {
+          body.classList.remove('theme-clair');
+          body.classList.add('theme-sombre');
+        } else {
+          body.classList.remove('theme-sombre');
+          body.classList.add('theme-clair');
+        }
+      }
+    </script>
+  </body>
 </html>
+

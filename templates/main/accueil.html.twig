@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}KHADIM DIAGNE – Portfolio{% endblock %}
+
+{% block body %}
+
+<section class="accueil">
+
+
+
+  <!-- Bloc photo -->
+  <div class="media-section">
+
+  
+
+  <img src="{{ asset('image/profil.jpg') }}" alt="Photo de KHADIM DIAGNE" class="profil-img">
+
+  <div class="documents-section">
+  <a href="{{ asset('documents/CV_Khadim_Diagne.pdf') }}" class="cv-button" download>
+    📄 Télécharger mon CV
+  </a>
+</div>
+
+  <a href="{{ asset('documents/Lettre_de_motivation.pdf') }}" class="cv-button" download>
+      📝 Télécharger ma lettre de motivation
+
+</a>
+</div>  
+
+
+<!-- Bloc contenu -->
+<div class="contenu">
+  <h1>KHADIM DIAGNE</h1>
+  <p class="accroche">Maîtriser les technologies pour structurer un avenir numérique responsable</p>
+    <div id="profil-card" class="theme theme-lumineux">
+
+
+  <h1>Construire des connexions solides dans un monde interconnecté.</h1>
+</div>
+  
+
+  <div class="presentation">
+  </div>
+    <p><strong>Âge :</strong> 19 ans</p>
+    <p><strong>Ville :</strong> Roanne</p>
+    <p><strong>Formation :</strong> BUT Réseaux & Télécoms – Université Jean-Monnet Saint-Étienne</p>
+    <p><strong>Profil :</strong> Étudiant passionné par les systèmes intelligents, l’architecture réseau et le développement web sécurisé.</p>
+  
+  
+
+
+
+
+
+
+    <div class="competences">
+      <h2>Mes domaines d’expertise</h2>
+      <ul>
+        <li>🖥️ Administration avancée de systèmes Linux</li>
+        <li>🐍 Programmation en Python orientée automatisation et sécurité</li>
+        <li>🛡️ Développement web sécurisé avec Symfony</li>
+        <li>🌐 Conception et optimisation d’architectures réseau intelligentes</li>
+       </a>
+    </div>
+<ul>
+
+
+<ul><ul><ul>
+<button id="change-theme" class="theme-button">🎨 Changer le style du cadre</button>
+
+</section>
+<section class="accueil-background">
+  <div class="contenu fade-in">
+    <h1>Bienvenue dans l'univers de mes réalisations</h1>
+    <p>Explorez mon portfolio, découvrez mes projets et consultez les documents témoignant de mes compétences.</p>
+    <a href="{{ path('mon_e_portfolio') }}" class="doc-button bw">📁 Voir mon e-Portfolio</a>
+  </div>
+</section>
+
+<ul>
+<button id="themeButton" class="change-theme">🎨 Changer le thème</button>
+</a>
+</div>
+</section>
+
+    <div class="reseaux">
+      <h3>Retrouvez-moi sur :</h3>
+      <a href="https://www.instagram.com/kdiagne799?igsh=aDQ2bTEydXJ2ZDhq" target="_blank">Instagram</a> |
+      <a href="https://snapchat.com/t/8jlwnV3a" target="_blank">Snapchat</a>
+
+  </div>
+
+
+</section>
+<ul>
+<ul>
+<ul><ul><ul>
+<ul><ul><ul><ul><ul><ul><ul><ul><ul><ul>
+<ul>
+</div>
+
+
+
+</section>
+{% endblock %}
