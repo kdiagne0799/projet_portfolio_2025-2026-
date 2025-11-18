@@ -16,16 +16,11 @@
   <img src="{{ asset('image/profil.jpg') }}" alt="Photo de KHADIM DIAGNE" class="profil-img">
 
   <div class="documents-section">
-  <a href="{{ asset('documents/CV_Khadim_Diagne.pdf') }}" class="cv-button" download>
-    📄 Télécharger mon CV
-  </a>
-</div>
-
-  <a href="{{ asset('documents/Lettre_de_motivation.pdf') }}" class="cv-button" download>
-      📝 Télécharger ma lettre de motivation
-
+<a href="{{ path('voir_cv') }}" class="btn-cv-simple" title="Accès protégé au CV">
+  📄Voir mon CV
 </a>
-</div>  
+
+</div>  </div> </div> </div> 
 
 
 <!-- Bloc contenu -->
@@ -47,7 +42,11 @@
     <p><strong>Profil :</strong> Étudiant passionné par les systèmes intelligents, l’architecture réseau et le développement web sécurisé.</p>
   
   
-
+  <div class="container mt-5 p-4 bg-light rounded">
+  <h3>Pour en savoir plus</h3>
+  <p>Découvrez mes passions, mes projets personnels et ce qui me motive au quotidien.</p>
+  <a href="{{ path('loisirs') }}" class="btn btn-primary">Voir mes loisirs</a>
+</div>
 
 
 
@@ -99,7 +98,10 @@
 <ul>
 </div>
 
-
+<footer class="footer-strict">
+  <span>&copy; KHADIM_DIAGNE – Ce site est protégé. Toute reproduction est strictement interdite.</span>
+</footer>
 
 </section>
 {% endblock %}
+

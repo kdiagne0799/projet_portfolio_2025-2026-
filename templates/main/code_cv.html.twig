@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accès au CV{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+  <h2>🔐 Accès protégé au CV</h2>
+  <p>Veuillez entrer le code d’accès pour consulter le CV :</p>
+
+  {% if erreur is defined and erreur %}
+    <div class="alert alert-danger">Code incorrect. Veuillez réessayer.</div>
+  {% endif %}
+
+  <form method="get" action="{{ path('voir_cv') }}">
+    <div class="form-group position-relative">
+      <input type="password" name="code" id="codeInput" class="form-control" placeholder="Code d’accès" required>
+      <button type="button" class="btn btn-sm btn-secondary position-absolute top-0 end-0 mt-1 me-1" onclick="togglePassword()">👁️</button>
+    </div>
+    <button type="submit" class="btn btn-success mt-3">Valider</button>
+  </form>
+</div>
+
+<script>
+function togglePassword() {
+  const input = document.getElementById('codeInput');
+  input.type = input.type === 'password' ? 'text' : 'password';
+}
+</script>
+{% endblock %}

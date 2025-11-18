@@ -5,6 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 class MainController extends AbstractController
 {
@@ -37,4 +38,37 @@ class MainController extends AbstractController
     {
         return $this->render('main/contact.html.twig');
     }
+    #[Route('/loisirs', name: 'loisirs')]
+    public function loisirs(): Response
+    {
+        return $this->render('main/loisirs.html.twig');
+    }
+    #[Route('/loisirs', name: 'loisirs')]
+    public function loisir(): Response
+    {
+        return $this->render('main/loisirs.html.twig');
+    }
+    #[Route('/cv', name: 'cv')]
+    public function cv(): Response
+    {
+        return $this->render('main/cv.html.twig');
+    }
+#[Route('/voir-mon-cv', name: 'voir_cv')]
+public function voirMonCv(Request $request): Response
+{
+    $code = $request->query->get('code');
+
+    if ($code === null) {
+        // Aucun code soumis → on affiche le formulaire sans erreur
+        return $this->render('main/code_cv.html.twig');
+    }
+
+    if ($code !== 'kdiagne799') {
+        // Code soumis mais incorrect → on affiche le formulaire avec erreur
+        return $this->render('main/code_cv.html.twig', ['erreur' => true]);
+    }
+
+    // Code correct → on redirige vers le CV
+    return $this->redirect('/cv/cv_Khadim_Diagne.html');
+}
 }

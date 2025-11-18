@@ -399,7 +399,7 @@ button, .menu-cube li a {
 .theme-button {
   margin-top: 20px;
   padding: 10px 15px;
-  background-color: #6f17b7;
+  background-color: #692e9a;
   color: white;
   border: none;
   border-radius: 8px;
@@ -407,6 +407,10 @@ button, .menu-cube li a {
   font-weight: bold;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
+.theme-button :hover {
+  background-color: #9583cb;
+} 
+
 .portfolio-link {
   display: inline-block;
   margin-top: 20px;
@@ -469,5 +473,73 @@ iframe:hover {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+.footer-strict {
+  background-color: #464242;
+  color: #eee;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+  border-top: 1px solid #3d2b2b;
+  animation: fadeInFooter 1.2s ease-in-out;
+}
+
+@keyframes fadeInFooter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.tag {
+  display: inline-block;
+  background-color: #e0f0e9;
+  color: #1a4d2e;
+  padding: 4px 8px;
+  margin: 3px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+/* TITRE PRINCIPAL */
+.title-loisirs {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* CARTES LOISIRS */
+.card-loisir {
+    background-color: #ffffff;
+    border: 2px solid #32ff7e;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+
+/* ICÔNES */
+.icon-loisir {
+    font-size: 3rem;
+    color: #1c6938;
+}
+.btn-cv-simple {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.btn-cv-simple:hover {
+  background-color: #218838;
+}
+@media print {
+  button {
+    display: none;
   }
 }
