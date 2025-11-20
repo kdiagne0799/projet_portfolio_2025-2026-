@@ -542,4 +542,219 @@ iframe:hover {
   button {
     display: none;
   }
+  .bloc-loisirs {
+  border: 2px solid #30d356;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
 }
+
+.btn-loisirs {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #28a745;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.btn-loisirs:hover {
+  background-color: #28c249;
+}
+
+.timeline-section {
+  background-color: #f8f9fa;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.section-title {
+  font-size: 28px;
+  color: #28a745;
+  margin-bottom: 20px;
+}
+
+.intro {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.quote {
+  font-style: italic;
+  background-color: #e9f5ee;
+  padding: 15px;
+  border-left: 4px solid #28a745;
+  margin-bottom: 30px;
+}
+
+.author {
+  display: block;
+  text-align: right;
+  font-size: 14px;
+  color: #555;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.timeline-item {
+  background-color: white;
+  border-left: 4px solid #28a745;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.photo-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.profile-photo {
+  max-width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.telechargement-box {
+  background-color: #e9f5ee;
+  border-left: 5px solid #28a745;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 30px 0;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.telechargement-box h4 {
+  margin-bottom: 15px;
+  color: #28a745;
+  font-weight: bold;
+}
+
+.cv-page {
+  padding: 40px;
+  background-color: #f0f4f8;
+}
+/* Structure globale */
+.cv-page {
+  padding: 40px;
+  background-color: #f0f4f8;
+}
+
+.cv-title {
+  font-size: 48px;
+  font-weight: bold;
+  color: #28a745;
+  text-align: center;
+  margin-bottom: 40px;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Cadre principal */
+.cv-wrapper {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* En-tête du CV */
+.cv-header {
+  background-color: #ffffff;
+  border-left: 6px solid #28a745;
+}
+
+.cv-header h2 {
+  color: #28a745;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.cv-header p.lead {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+/* Titres de section */
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1f1f24;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #28a745;
+  padding-bottom: 5px;
+}
+
+/* Cartes */
+.card {
+  border: none;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1f1f24;
+}
+
+.card-body ul {
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+
+/* Tags de compétences */
+.tag {
+  display: inline-block;
+  background-color: #28a745;
+  color: white;
+  padding: 6px 12px;
+  margin: 4px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: transform 0.2s ease;
+}
+
+.tag:hover {
+  transform: scale(1.05);
+  background-color: #218838;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .cv-title {
+    font-size: 36px;
+  }
+
+  .cv-wrapper {
+    padding: 20px;
+  }
+
+  .cv-header h2 {
+    font-size: 22px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }

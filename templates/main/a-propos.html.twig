@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>CV - À propos</title>
+<style>
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #0c0f14;
+    color: #e3e8f0;
+}
+
+.about-section {
+    padding: 50px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #00d9ff;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.about-card {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: #1a1d23;
+    border: 2px solid #00ffc8;
+    box-shadow: 0 0 20px #00ffc8;
+}
+
+.about-card h3 {
+    margin-top: 25px;
+    color: #00ffc8;
+    text-transform: uppercase;
+}
+
+.about-card blockquote {
+    margin: 15px 0;
+    padding: 10px 15px;
+    border-left: 4px solid #00ffc8;
+    background-color: #0f1217;
+    font-style: italic;
+    border-radius: 5px;
+}
+
+.about-card ul {
+    margin-left: 20px;
+    line-height: 1.6;
+}
+
+.about-card li {
+    margin: 6px 0;
+}
+</style>
+</head>
+<body>
+<div style="display:flex; gap:15px; justify-content:center; margin:20px 0; font-family:Roboto, sans-serif;">
+
+  <a href="{{ path('accueil') }}"
+     style="padding:12px 25px; border-radius:15px; text-decoration:none; color:#00ffc8; background-color:#212121; box-shadow:0 5px 15px rgba(0,0,0,0.3); transition:0.3s; font-weight:bold;">
+    Accueil
+  </a>
+
+  <a href="{{ path('a_propos') }}"
+     style="padding:12px 25px; border-radius:15px; text-decoration:none; color:#212121; background-color:#00ffc8; box-shadow:0 5px 15px rgba(0,0,0,0.3); transition:0.3s; font-weight:bold;">
+    À propos
+  </a>
+
+  <a href="{{ path('services') }}"
+     style="padding:12px 25px; border-radius:15px; text-decoration:none; color:#00ffc8; background-color:#212121; box-shadow:0 5px 15px rgba(0,0,0,0.3); transition:0.3s; font-weight:bold;">
+    Services
+  </a>
+
+  <a href="{{ path('contact') }}"
+     style="padding:12px 25px; border-radius:15px; text-decoration:none; color:#00ffc8; background-color:#212121; box-shadow:0 5px 15px rgba(0,0,0,0.3); transition:0.3s; font-weight:bold;">
+    Contact
+  </a>
+
+</div>
+
+<style>
+div a:hover {
+  background-color: #00ffc8;
+  color: #212121;
+  transform: translateY(-5px) scale(1.05);
+}
+</style>
+
+
+<section id="about" class="about-section">
+    <h2 class="section-title" style="
+    color: #000000; /* texte noir */
+    -webkit-text-stroke: 1.5px #00ffc8; /* contour vert */
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+">
+    À PROPOS DE MOI
+</h2>
+
+
+    <div class="about-card">
+        <p>
+            Je suis <strong>Khadim Diagne</strong>, étudiant en première année de 
+            <strong>BUT Réseaux & Télécommunications</strong> à l’IUT de Roanne. 
+            Animé par une curiosité profonde pour la cybersécurité, les systèmes Linux et les infrastructures réseau,
+            je m’oriente progressivement vers l’analyse, la conception et la sécurisation 
+            d’architectures techniques modernes.
+        </p>
+
+        <blockquote>
+            « La cybersécurité est comme un système immunitaire : elle doit être constamment mise à jour. »<br>
+            <span>– Citation inspirante</span>
+        </blockquote>
+
+        <h3>📍 Origines & Parcours</h3>
+        <p>
+            Originaire du Sénégal, j’ai traversé continents et habitudes pour construire mon avenir dans le numérique.
+            Ce voyage n’est pas simplement géographique : c’est une quête d’apprentissage, 
+            d’effort constant et d’excellence.  
+            À Roanne, j’ai trouvé un environnement où ma passion pour la technologie peut s’exprimer pleinement 
+            et où je développe une vision solide de mon futur professionnel.
+        </p>
+
+        <h3>🎓 Formation & Compétences en Construction</h3>
+        <p>
+            Actuellement en première année, je bâtis des bases robustes en 
+            <strong>réseau, cybersécurité, systèmes d’exploitation, virtualisation,
+            télécommunications et programmation</strong>.
+            Chaque projet, chaque TP et chaque mise en situation technique renforcent 
+            ma logique d’ingénieur et ma compréhension des systèmes modernes.
+        </p>
+
+        <h3>🚀 Vision & Ambitions</h3>
+        <p>
+            Mon objectif est clair : devenir un professionnel capable de sécuriser, défendre et optimiser 
+            des systèmes critiques.  
+            Je veux créer des environnements numériques résilients, auditer des infrastructures sensibles, 
+            anticiper les menaces et contribuer à un monde numérique plus sûr et plus éthique.  
+            Pour moi, la cybersécurité n’est pas seulement une discipline : c’est une responsabilité.
+        </p>
+
+        <h3>🧠 Ma Méthode de Travail</h3>
+        <p>Mon approche repose sur trois piliers :</p>
+        <ul>
+            <li><strong>Comprendre en profondeur</strong> plutôt que mémoriser.</li>
+            <li><strong>Pratiquer intensivement</strong> via labs, challenges et projets personnels.</li>
+            <li><strong>Documenter clairement</strong> pour transmettre et consolider mes acquis.</li>
+        </ul>
+        <p>
+            Cette démarche structurée me permet d'apprendre avec rigueur, 
+            discipline et précision, même face aux concepts les plus techniques.
+        </p>
+
+        <h3>💡 Soft Skills & Valeurs</h3>
+        <p>Au-delà des compétences techniques, je cultive chaque jour :</p>
+        <ul>
+            <li><strong>Rigueur</strong> – faire les choses proprement, dès le premier essai.</li>
+            <li><strong>Autonomie</strong> – avancer seul lorsque nécessaire, chercher avant de demander.</li>
+            <li><strong>Communication claire</strong> – expliquer sans compliquer, vulgariser sans dénaturer.</li>
+            <li><strong>Esprit d’équipe</strong> – apprendre avec les autres, collaborer efficacement.</li>
+            <li><strong>Persévérance</strong> – ne jamais abandonner face à un bug ou un système complexe.</li>
+        </ul>
+
+        <h3>🔥 Ce Qui Me Motive Réellement</h3>
+        <p>
+            Ce qui me passionne dans ce domaine, c’est l’équilibre rare entre créativité et logique.
+            J’aime bâtir, sécuriser, optimiser.  
+            J’aime analyser l’invisible, détecter ce qui pourrait mal tourner,
+            imaginer ce qui pourrait mieux fonctionner.  
+            Et surtout, j’aime l’idée d’apporter une contribution concrète 
+            à un secteur en constante évolution et crucial pour l’avenir du numérique.
+        </p>
+
+
+
+    </div>
+</section>

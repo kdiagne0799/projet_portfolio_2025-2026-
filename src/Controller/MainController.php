@@ -48,27 +48,15 @@ class MainController extends AbstractController
     {
         return $this->render('main/loisirs.html.twig');
     }
-    #[Route('/cv', name: 'cv')]
-    public function cv(): Response
+    #[Route('/voir-cv', name: 'voir_cv')]
+    public function voirCv(): Response
     {
-        return $this->render('main/cv.html.twig');
+        return $this->render('voir_cv.html.twig');
     }
 #[Route('/voir-mon-cv', name: 'voir_cv')]
 public function voirMonCv(Request $request): Response
 {
-    $code = $request->query->get('code');
 
-    if ($code === null) {
-        // Aucun code soumis → on affiche le formulaire sans erreur
-        return $this->render('main/code_cv.html.twig');
-    }
-
-    if ($code !== 'kdiagne799') {
-        // Code soumis mais incorrect → on affiche le formulaire avec erreur
-        return $this->render('main/code_cv.html.twig', ['erreur' => true]);
-    }
-
-    // Code correct → on redirige vers le CV
     return $this->redirect('/cv/cv_Khadim_Diagne.html');
 }
 }

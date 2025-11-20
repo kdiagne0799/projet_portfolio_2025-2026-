@@ -4,6 +4,8 @@
 
 {% block body %}
 
+
+
 <section class="accueil">
 
 
@@ -19,8 +21,15 @@
 <a href="{{ path('voir_cv') }}" class="btn-cv-simple" title="Accès protégé au CV">
   📄Voir mon CV
 </a>
+</div>  
+<div class="telechargement-box">
+  <h4>Cliquer ce lien ci-dessous pour Télécharger le CV</h4>
+  <a href="{{ asset('cv/cv_Khadim_Diagne.html') }}" class="btn btn-success" download>
+    <i class="bi bi-download"></i> Téléchargement du cv
+  </a>
+</div>
 
-</div>  </div> </div> </div> 
+</div>  
 
 
 <!-- Bloc contenu -->
@@ -42,10 +51,10 @@
     <p><strong>Profil :</strong> Étudiant passionné par les systèmes intelligents, l’architecture réseau et le développement web sécurisé.</p>
   
   
-  <div class="container mt-5 p-4 bg-light rounded">
-  <h3>Pour en savoir plus</h3>
+<div style="background-color: #d4edda; padding: 20px;">
+  <p><strong>Pour en savoir plus</strong></p>
   <p>Découvrez mes passions, mes projets personnels et ce qui me motive au quotidien.</p>
-  <a href="{{ path('loisirs') }}" class="btn btn-primary">Voir mes loisirs</a>
+  <a href="/loisirs">Voir mes loisirs</a>
 </div>
 
 
@@ -64,8 +73,7 @@
 <ul>
 
 
-<ul><ul><ul>
-<button id="change-theme" class="theme-button">🎨 Changer le style du cadre</button>
+
 
 </section>
 <section class="accueil-background">
