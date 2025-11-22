@@ -48,15 +48,12 @@ class MainController extends AbstractController
     {
         return $this->render('main/loisirs.html.twig');
     }
-    #[Route('/voir-cv', name: 'voir_cv')]
-    public function voirCv(): Response
-    {
-        return $this->render('voir_cv.html.twig');
-    }
-#[Route('/voir-mon-cv', name: 'voir_cv')]
-public function voirMonCv(Request $request): Response
-{
 
-    return $this->redirect('/cv/cv_Khadim_Diagne.html');
-}
+    #[Route('/voir-mon-cv', name: 'voir_cv')]
+    public function voirMonCv(Request $request): Response
+    {
+
+        return $this->redirect('/cv/cv_Khadim_Diagne.html');
+    }
+
 }

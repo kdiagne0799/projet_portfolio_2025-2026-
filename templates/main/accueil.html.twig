@@ -4,112 +4,240 @@
 
 {% block body %}
 
-
-
 <section class="accueil">
 
-
-
-  <!-- Bloc photo -->
+  <!-- Photo + Documents -->
   <div class="media-section">
 
-  
+    <img src="{{ asset('image/profil.jpg') }}" alt="KHADIM DIAGNE Profile Photo" class="profil-img">
 
-  <img src="{{ asset('image/profil.jpg') }}" alt="Photo de KHADIM DIAGNE" class="profil-img">
 
-  <div class="documents-section">
-<a href="{{ path('voir_cv') }}" class="btn-cv-simple" title="Accès protégé au CV">
-  📄Voir mon CV
-</a>
-</div>  
-<div class="telechargement-box">
-  <h4>Cliquer ce lien ci-dessous pour Télécharger le CV</h4>
-  <a href="{{ asset('cv/cv_Khadim_Diagne.html') }}" class="btn btn-success" download>
-    <i class="bi bi-download"></i> Téléchargement du cv
-  </a>
+<!-- Bouton pour voir mon CV avec une couleur verte fluo -->
+<div class="button-section">
+  <button onclick="showForm()" class="btn btn-info btn-see-my-cv">Access my CV</button>
 </div>
 
-</div>  
+<!-- Formulaire d'inscription -->
+<div class="form-section" id="form-section" style="display:none;">
+  <h2>Sign up to view and download my CV</h2>
+  <form id="cv-form" onsubmit="return validateForm()" autocomplete="off">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required onkeydown="moveToNextField(event, 'lastName')" /><br>
 
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required onkeydown="moveToNextField(event, 'email')" /><br>
 
-<!-- Bloc contenu -->
-<div class="contenu">
-  <h1>KHADIM DIAGNE</h1>
-  <p class="accroche">Maîtriser les technologies pour structurer un avenir numérique responsable</p>
-    <div id="profil-card" class="theme theme-lumineux">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required onkeydown="moveToNextField(event, 'address')" /><br>
 
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address" required onkeydown="moveToNextField(event, 'profession')" /><br>
 
-  <h1>Construire des connexions solides dans un monde interconnecté.</h1>
+    <label for="profession">Profession:</label>
+    <input type="text" id="profession" name="profession" required /><br>
+
+    <button type="submit">Submit</button>
+  </form>
 </div>
-  
 
-  <div class="presentation">
+<!-- Section pour afficher et télécharger/imprimer mon CV -->
+<div class="documents-section" id="cv-docs" style="display:none;">
+ 
+
+  <!-- Ajouter le bouton "" -->
+  <button onclick="viewMyCV()" class="btn btn-secondary" style="margin-bottom:10px;">View my CV</button>
+
+  <div class="download-box">
+    <h4>Click the links below to download or print my CV</h4>
+    <a href="{{ asset('cv/cv_Khadim_Diagne.html') }}" class="btn btn-success" download>
+      <i class="bi bi-download"></i> Download CV
+    </a>
+
+    <!-- Mise en forme des boutons -->
+    <button onclick="printCV()" class="btn btn-primary" style="margin-top:10px;">
+      🖨️ Print CV
+    </button>
   </div>
-    <p><strong>Âge :</strong> 19 ans</p>
-    <p><strong>Ville :</strong> Roanne</p>
-    <p><strong>Formation :</strong> BUT Réseaux & Télécoms – Université Jean-Monnet Saint-Étienne</p>
-    <p><strong>Profil :</strong> Étudiant passionné par les systèmes intelligents, l’architecture réseau et le développement web sécurisé.</p>
-  
-  
-<div style="background-color: #d4edda; padding: 20px;">
-  <p><strong>Pour en savoir plus</strong></p>
-  <p>Découvrez mes passions, mes projets personnels et ce qui me motive au quotidien.</p>
-  <a href="/loisirs">Voir mes loisirs</a>
 </div>
 
+<script>
+// Fonction pour afficher le formulaire après le clic sur "Voir mon CV"
+function showForm() {
+    document.getElementById('form-section').style.display = 'block';  // Afficher le formulaire
+    document.querySelector('.button-section').style.display = 'none';  // Cacher le bouton "Voir mon CV"
+}
 
+// Fonction pour déplacer le focus vers le champ suivant avec "Entrée"
+function moveToNextField(event, nextFieldId) {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Empêcher le formulaire de se soumettre
+        document.getElementById(nextFieldId).focus(); // Déplacer le focus vers le champ suivant
+    }
+}
 
+// Fonction de validation du formulaire
+function validateForm() {
+    const firstName = document.getElementById('firstName');
+    const lastName = document.getElementById('lastName');
+    const email = document.getElementById('email');
+    const address = document.getElementById('address');
+    const profession = document.getElementById('profession');
 
+    let valid = true;
 
-    <div class="competences">
-      <h2>Mes domaines d’expertise</h2>
-      <ul>
-        <li>🖥️ Administration avancée de systèmes Linux</li>
-        <li>🐍 Programmation en Python orientée automatisation et sécurité</li>
-        <li>🛡️ Développement web sécurisé avec Symfony</li>
-        <li>🌐 Conception et optimisation d’architectures réseau intelligentes</li>
-       </a>
+    // Validation des champs
+    if (firstName.value.length < 2) {
+        firstName.classList.add('invalid');
+        valid = false;
+    } else {
+        firstName.classList.remove('invalid');
+    }
+
+    if (lastName.value.length < 2) {
+        lastName.classList.add('invalid');
+        valid = false;
+    } else {
+        lastName.classList.remove('invalid');
+    }
+
+    // Validation de l'email : au moins 3 caractères, un @, et un domaine valide (.com, .fr, etc.)
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (email.value.length < 3 || !emailPattern.test(email.value)) {
+        email.classList.add('invalid');
+        valid = false;
+    } else {
+        email.classList.remove('invalid');
+    }
+
+    // Validation de l'adresse
+    if (address.value.length < 3) {
+        address.classList.add('invalid');
+        valid = false;
+    } else {
+        address.classList.remove('invalid');
+    }
+
+    // Validation de la profession : minimum 2 caractères
+    if (profession.value.length < 2) {
+        profession.classList.add('invalid');
+        valid = false;
+    } else {
+        profession.classList.remove('invalid');
+    }
+
+    if (!valid) {
+        alert("Please fill in all the fields correctly.");
+    } else {
+        alert("Thank you! Now you can view and download my CV.");
+        document.getElementById('cv-docs').style.display = 'block'; // Afficher le CV
+    }
+
+    return false; // Empêcher l'envoi du formulaire
+}
+
+// Fonction pour voir mon CV après la soumission du formulaire
+function viewMyCV() {
+    // Ouvrir une nouvelle page pour voir le CV
+    window.open('{{ asset("cv/cv_Khadim_Diagne.html") }}', '_blank');
+}
+
+// Fonction pour imprimer mon CV
+function printCV() {
+    const cvWindow = window.open('{{ asset("cv/cv_Khadim_Diagne.html") }}', '_blank');
+    cvWindow.onload = function () {
+        cvWindow.print();
+    };
+}
+</script>
+
+<!-- Inclure la bibliothèque jsPDF pour générer le PDF (si nécessaire) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+/* Style pour les champs invalides */
+.invalid {
+    border: 2px solid red;
+    background-color: #ffe6e6;
+}
+
+/* Style pour le bouton "See My CV" en vert fluo */
+.btn-see-my-cv {
+    background-color: #18ce48ff; /* Vert fluo */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+/* Effet au survol du bouton "See My CV" */
+.btn-see-my-cv:hover {
+    background-color: #118d2cff; /* Vert plus foncé */
+}
+</style>
+  </div>
+
+  <!-- Content Block -->
+  <div class="contenu">
+
+    <h1>KHADIM DIAGNE–GROUP-B2</h1>
+    <p class="accroche">Mastering technologies to build a responsible digital future</p>
+
+    <div id="profil-card" class="theme theme-lumineux">
+      <h1>Building strong connections in an interconnected world.</h1>
     </div>
-<ul>
 
+    <div class="presentation"></div>
 
+    <p><strong>Age:</strong> 19 years old</p>
+    <p><strong>City:</strong> Roanne</p>
+    <p><strong>Degree:</strong> BUT Networks & Telecommunications – Jean-Monnet University, Saint-Étienne</p>
+    <p><strong>Profile:</strong> A passionate student focusing on intelligent systems, network architecture, and secure web development.</p>
 
+    <div style="background-color: #d4edda; padding: 20px;">
+      <p><strong>Want to know more?</strong></p>
+      <p>Discover my passions, personal projects, and what drives me daily.</p>
+      <a href="/loisirs">See my hobbies</a>
+    </div>
+
+    <!-- Skills -->
+    <div class="competences">
+      <h2>My Areas of Expertise</h2>
+      <ul>
+        <li>🖥️ Advanced Linux System Administration</li>
+        <li>🐍 Python Programming for Automation & Security</li>
+        <li>🛡️ Secure Web Development with Symfony</li>
+        <li>🌐 Design & Optimization of Intelligent Network Architectures</li>
+      </ul>
+    </div>
+
+  </div>
 
 </section>
+
+<!-- Background Section -->
 <section class="accueil-background">
   <div class="contenu fade-in">
-    <h1>Bienvenue dans l'univers de mes réalisations</h1>
-    <p>Explorez mon portfolio, découvrez mes projets et consultez les documents témoignant de mes compétences.</p>
-    <a href="{{ path('mon_e_portfolio') }}" class="doc-button bw">📁 Voir mon e-Portfolio</a>
+    <h1>Welcome to the world of my achievements</h1>
+    <p>Explore my portfolio, discover my projects, and access documents that reflect my skills.</p>
+    <a href="{{ path('mon_e_portfolio') }}" class="doc-button bw">📁 View my e-Portfolio</a>
   </div>
 </section>
 
-<ul>
-<button id="themeButton" class="change-theme">🎨 Changer le thème</button>
-</a>
-</div>
-</section>
 
-    <div class="reseaux">
-      <h3>Retrouvez-moi sur :</h3>
-      <a href="https://www.instagram.com/kdiagne799?igsh=aDQ2bTEydXJ2ZDhq" target="_blank">Instagram</a> |
-      <a href="https://snapchat.com/t/8jlwnV3a" target="_blank">Snapchat</a>
-
-  </div>
-
-
-</section>
-<ul>
-<ul>
-<ul><ul><ul>
-<ul><ul><ul><ul><ul><ul><ul><ul><ul><ul>
-<ul>
+<!-- Theme Button -->
+<div style="text-align: center; margin-top: 20px; margin-bottom: 40px;">
+  <button id="themeButton" class="change-theme">🎨 Change Theme</button>
 </div>
 
+
+
+<!-- Footer -->
 <footer class="footer-strict">
-  <span>&copy; KHADIM_DIAGNE – Ce site est protégé. Toute reproduction est strictement interdite.</span>
+  <span>&copy; KHADIM DIAGNE – This website and all its content are protected. Unauthorized reproduction, copying, or distribution is strictly prohibited.</span>
 </footer>
 
-</section>
 {% endblock %}
-
