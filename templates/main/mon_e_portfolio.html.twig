@@ -1,33 +1,106 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mon e-Portfolio – KHADIM DIAGNE{% endblock %}
+{% block title %}Mon e-Portfolio – Khadim Diagne{% endblock %}
 
 {% block body %}
-<section class="portfolio">
-  <h1>Mon e-Portfolio</h1>
-  <p class="intro">Bienvenue dans mon espace portfolio. Vous trouverez ici mes projets, compétences et réalisations.</p>
-</section>
-<h2>📁 Mon portfolio </h2>
+<section class="portfolio-section">
+    <h2 class="section-title portfolio-title">Mon e‑Portfolio</h2>
 
-<iframe 
-  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ9Bgu7vvS6kAmv2wnDT3XpTzKoQJhAkaDErKwDJ-197XEsIScLcxZgo5p-nf79lQ/pubhtml?widget=true&amp;headers=false" 
-  width="100%" 
-  height="600" 
-  style="border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);">
-</iframe>
-
-<p class="text-center mt-4">
-      <a href="https://github.com/kdiagne0799/projet_portfolio_2025-2026-" class="btn btn-outline-success">Voir mes projets sur GitHub</a>
+    <p class="portfolio-intro">
+        Bienvenue dans mon espace portfolio. Vous trouverez ici une vue d’ensemble de mes projets,
+        compétences et réalisations, ainsi qu’un accès direct à mon travail sur GitHub.
     </p>
-</a>
-<div style="text-align:center; margin:30px 0;">
-  <a href="{{ path('accueil') }}" 
-     style="padding:12px 25px; background-color:#00ffc8; color:#212121; 
-            font-weight:bold; border-radius:10px; text-decoration:none; 
-            transition:0.3s; display:inline-block;">
-    Retour à l’Accueil
-  </a>
-</div>
 
+    <div class="portfolio-embed">
+        <h3 class="portfolio-subtitle">📁 Tableau de suivi</h3>
+        <iframe
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ9Bgu7vvS6kAmv2wnDT3XpTzKoQJhAkaDErKwDJ-197XEsIScLcxZgo5p-nf79lQ/pubhtml?widget=true&amp;headers=false"
+            width="100%"
+            height="520"
+            loading="lazy"
+            style="border:0;"
+        ></iframe>
+    </div>
 
-{% endblock %}    
+    <div class="portfolio-actions">
+        <a href="https://github.com/kdiagne0799/projet_portfolio_2025-2026-" target="_blank" class="btn-primary">
+            <i class="bi bi-github"></i>
+            Voir mes projets sur GitHub
+        </a>
+
+        <a href="{{ path('accueil') }}" class="btn-ghost">
+            <i class="bi bi-house-door"></i>
+            Retour à l’accueil
+        </a>
+    </div>
+</section>
+{% endblock %}
+
+{% block page_styles %}
+.portfolio-section {
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.portfolio-title {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-main);
+    position: relative;
+}
+
+.portfolio-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    margin: 0.6rem auto 0;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #f97316, #fb923c);
+}
+
+.portfolio-intro {
+    max-width: 720px;
+    margin: 0 auto 1.6rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.portfolio-embed {
+    background: rgba(15, 23, 42, 0.96);
+    border-radius: 18px;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    padding: 1.1rem 1.1rem 1.3rem;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+    margin-bottom: 1.8rem;
+}
+
+.portfolio-subtitle {
+    margin: 0 0 0.8rem;
+    font-size: 1.05rem;
+    color: var(--text-main);
+}
+
+.portfolio-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .portfolio-title {
+        font-size: 1.4rem;
+        letter-spacing: 0.12em;
+    }
+
+    .portfolio-embed iframe {
+        height: 420px;
+    }
+}
+{% endblock %}

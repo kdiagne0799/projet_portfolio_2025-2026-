@@ -1,143 +1,209 @@
-<div style="display:flex; gap:15px; justify-content:center; margin:20px 0; font-family:Roboto, sans-serif;">
+{% extends 'base.html.twig' %}
 
-  <a href="{{ path('accueil') }}"
-     style="padding:12px 25px; border-radius:15px; text-decoration:none; color:#00ffc8; background-color:#212121; box-shadow:0 5px 15px rgba(0,0,0,0.3); transition:0.3s; font-weight:bold;">
-    Accueil
-  </a>
+{% block title %}Services – Khadim Diagne{% endblock %}
 
-  <a href="{{ path('a_propos') }}"
-     style="padding:12px 25px; border-radius:15px; text-decoration:none; color:#00ffc8; background-color:#212121; box-shadow:0 5px 15px rgba(0,0,0,0.3); transition:0.3s; font-weight:bold;">
-    À propos
-  </a>
+{% block body %}
+<section id="services-section" class="services-section">
+    <h2 class="section-title services-title">Mes services & compétences</h2>
 
-  <a href="{{ path('services') }}"
-     style="padding:12px 25px; border-radius:15px; text-decoration:none; color:#212121; background-color:#00ffc8; box-shadow:0 5px 15px rgba(0,0,0,0.3); transition:0.3s; font-weight:bold;">
-    Services
-  </a>
+    <div class="services-intro">
+        <p>
+            Voici un aperçu des domaines sur lesquels je peux intervenir : réseaux, systèmes,
+            développement web et cybersécurité, avec une approche sérieuse et orientée résultats.
+        </p>
+    </div>
 
-  <a href="{{ path('contact') }}"
-     style="padding:12px 25px; border-radius:15px; text-decoration:none; color:#00ffc8; background-color:#212121; box-shadow:0 5px 15px rgba(0,0,0,0.3); transition:0.3s; font-weight:bold;">
-    Contact
-  </a>
+    <div class="services-grid">
+        <!-- Service 1 : Administration Réseau -->
+        <article class="service-card">
+            <div class="service-icon">
+                <i class="bi bi-hdd-network"></i>
+            </div>
+            <h3>Administration réseau & internet</h3>
+            <ul>
+                <li>Interventions sur équipements réseaux et télécoms.</li>
+                <li>Configuration LAN, VLAN, IP, switching et routage.</li>
+                <li>Administration Linux / Windows et optimisation réseau.</li>
+            </ul>
+        </article>
 
-</div>
+        <!-- Service 2 : Connectivité & ToIP -->
+        <article class="service-card">
+            <div class="service-icon">
+                <i class="bi bi-telephone-forward"></i>
+            </div>
+            <h3>Connectivité & ToIP</h3>
+            <ul>
+                <li>Déploiement câblage, fibre, Wi-Fi et VoIP.</li>
+                <li>Optimisation de la qualité des appels et de la bande passante.</li>
+                <li>Accompagnement des utilisateurs sur les outils de communication.</li>
+            </ul>
+        </article>
 
-<style>
-div a:hover {
-  background-color: #00ffc8;
-  color: #212121;
-  transform: translateY(-5px) scale(1.05);
+        <!-- Service 3 : Développement Informatique -->
+        <article class="service-card">
+            <div class="service-icon">
+                <i class="bi bi-code-slash"></i>
+            </div>
+            <h3>Développement informatique & web</h3>
+            <ul>
+                <li>Création de sites et applications (HTML, CSS, PHP, Symfony).</li>
+                <li>Gestion de bases de données et intégration Git/GitHub.</li>
+                <li>Automatisation de tâches réseau et systèmes.</li>
+            </ul>
+        </article>
+
+        <!-- Service 4 : Sécurité & Cybersécurité -->
+        <article class="service-card">
+            <div class="service-icon">
+                <i class="bi bi-shield-lock"></i>
+            </div>
+            <h3>Sécurité & cybersécurité</h3>
+            <ul>
+                <li>Configuration sécurisée des équipements et serveurs.</li>
+                <li>Firewall, ACL, chiffrement, premiers tests de sécurité.</li>
+                <li>Sensibilisation et bonnes pratiques pour les utilisateurs.</li>
+            </ul>
+        </article>
+
+        <!-- Service 5 : Virtualisation & Systèmes -->
+        <article class="service-card">
+            <div class="service-icon">
+                <i class="bi bi-cloud"></i>
+            </div>
+            <h3>Virtualisation & administration système</h3>
+            <ul>
+                <li>Création et gestion de machines virtuelles.</li>
+                <li>Configuration réseaux virtuels : NAT, bridge, host-only.</li>
+                <li>Maintenance d’environnements virtuels et physiques.</li>
+            </ul>
+        </article>
+    </div>
+
+    <div class="services-footer">
+        <a href="{{ path('contact') }}" class="btn-primary">
+            <i class="bi bi-send-fill"></i>
+            Discuter de mon projet
+        </a>
+        <a href="{{ path('accueil') }}" class="btn-ghost">
+            <i class="bi bi-house-door"></i>
+            Retour à l’accueil
+        </a>
+    </div>
+</section>
+{% endblock %}
+
+{% block page_styles %}
+.services-section {
+    max-width: 1120px;
+    margin: 0 auto;
 }
-</style>
 
-
-<div id="services-section" style="max-width: 1200px; margin: 50px auto; font-family: 'Roboto', sans-serif;">
- <h1 style="
-    text-align:center;
-    font-size:40px;
-    color:#000000; /* texte noir */
-    -webkit-text-stroke: 2px #00ffc8; /* contour vert */
-    text-shadow: 3px 3px 10px rgba(0,0,0,0.4);
-    margin-bottom:50px;
-">
-    Mes Services & Compétences Techniques
-</h1>
-
-
-  <div style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center;">
-
-    <!-- Service 1 : Administration Réseau -->
-    <div style="flex:1 1 350px; background: linear-gradient(135deg, #2e7d32, #66bb6a); padding:30px; border-radius:20px; color:white; box-shadow:0 12px 25px rgba(0,0,0,0.3); transition: transform 0.3s;">
-      <i class="bi bi-hdd-network" style="font-size:45px; margin-bottom:20px;"></i>
-      <h3 style="margin-bottom:20px; font-size:24px;">Administration Réseau & Internet</h3>
-      <p>J’offre un service complet d’administration des réseaux et infrastructures pour entreprises et particuliers :</p>
-      <ul style="text-align:left; font-size:15px; line-height:1.7; padding-left:20px;">
-        <li>Maîtrise des bases électriques pour interventions sur équipements réseaux et télécoms.</li>
-        <li>Compréhension approfondie de l’architecture et des fondements des systèmes numériques.</li>
-        <li>Configuration des fonctions réseau : LAN, VLAN, adressage IP, switching et routage statique.</li>
-        <li>Administration des postes clients et systèmes d’exploitation (Linux / Windows).</li>
-        <li>Détection et résolution de dysfonctionnements et optimisation de la performance réseau.</li>
-        <li>Déploiement de services réseaux : DHCP, DNS, NAT, PAT, VPN.</li>
-      </ul>
-      <p style="margin-top:15px; font-style:italic;">💡 Service idéal pour PME, start-up ou particuliers souhaitant un réseau performant et sécurisé.</p>
-    </div>
-
-    <!-- Service 2 : Connectivité & ToIP -->
-    <div style="flex:1 1 350px; background: linear-gradient(135deg, #1565c0, #42a5f5); padding:30px; border-radius:20px; color:white; box-shadow:0 12px 25px rgba(0,0,0,0.3); transition: transform 0.3s;">
-      <i class="bi bi-telephone-forward" style="font-size:45px; margin-bottom:20px;"></i>
-      <h3 style="margin-bottom:20px; font-size:24px;">Connectivité & ToIP</h3>
-      <p>Je connecte entreprises et utilisateurs en déployant des systèmes fiables et performants :</p>
-      <ul style="text-align:left; font-size:15px; line-height:1.7; padding-left:20px;">
-        <li>Mesure et analyse des signaux numériques et analogiques.</li>
-        <li>Déploiement et configuration de supports de transmission : câblage, fibre, Wi-Fi.</li>
-        <li>Connexion et configuration de systèmes VoIP / ToIP pour communication interne et externe.</li>
-        <li>Optimisation de la qualité des appels et gestion de bande passante.</li>
-        <li>Support et communication professionnelle avec clients et collaborateurs.</li>
-        <li>Formation des utilisateurs sur les bonnes pratiques réseau et télécoms.</li>
-      </ul>
-      <p style="margin-top:15px; font-style:italic;">💡 Service idéal pour les entreprises souhaitant connecter efficacement leurs équipes et clients.</p>
-    </div>
-
-    <!-- Service 3 : Développement d’outils et applications -->
-    <div style="flex:1 1 350px; background: linear-gradient(135deg, #6a1b9a, #ab47bc); padding:30px; border-radius:20px; color:white; box-shadow:0 12px 25px rgba(0,0,0,0.3); transition: transform 0.3s;">
-      <i class="bi bi-code-slash" style="font-size:45px; margin-bottom:20px;"></i>
-      <h3 style="margin-bottom:20px; font-size:24px;">Développement Informatique & Web</h3>
-      <p>Je crée des outils et applications pour automatiser, sécuriser et améliorer vos systèmes :</p>
-      <ul style="text-align:left; font-size:15px; line-height:1.7; padding-left:20px;">
-        <li>Utilisation et configuration de systèmes informatiques pour le développement.</li>
-        <li>Lecture, exécution, correction et amélioration de programmes.</li>
-        <li>Création de sites Web et applications Web : HTML, CSS, Bootstrap, PHP, Symfony.</li>
-        <li>Choix et gestion des bases de données adaptées aux applications.</li>
-        <li>Intégration dans des environnements collaboratifs : Git, GitHub, travail en équipe.</li>
-        <li>Automatisation de tâches réseau et système via scripts et outils dédiés.</li>
-      </ul>
-      <p style="margin-top:15px; font-style:italic;">💡 Service idéal pour PME, start-up ou projets personnels numériques et innovants.</p>
-    </div>
-
-    <!-- Service 4 : Sécurité & cybersécurité -->
-    <div style="flex:1 1 350px; background: linear-gradient(135deg, #ff5722, #ff8a65); padding:30px; border-radius:20px; color:white; box-shadow:0 12px 25px rgba(0,0,0,0.3); transition: transform 0.3s;">
-      <i class="bi bi-shield-lock" style="font-size:45px; margin-bottom:20px;"></i>
-      <h3 style="margin-bottom:20px; font-size:24px;">Sécurité & Cybersécurité</h3>
-      <p>Je sécurise vos infrastructures et données avec des pratiques modernes :</p>
-      <ul style="text-align:left; font-size:15px; line-height:1.7; padding-left:20px;">
-        <li>Configuration sécurisée des équipements réseau et serveurs.</li>
-        <li>Firewalling, contrôle d’accès et ACL pour protéger vos systèmes.</li>
-        <li>Notions de cryptographie et gestion des identités.</li>
-        <li>Analyse et détection de vulnérabilités (Wireshark, tests de pénétration).</li>
-        <li>Conseils pour la sécurité des utilisateurs et bonnes pratiques.</li>
-      </ul>
-      <p style="margin-top:15px; font-style:italic;">💡 Service idéal pour entreprises ou particuliers soucieux de la sécurité de leurs systèmes.</p>
-    </div>
-
-    <!-- Service 5 : Virtualisation & systèmes -->
-    <div style="flex:1 1 350px; background: linear-gradient(135deg, #ffca28, #ffd54f); padding:30px; border-radius:20px; color:#212121; box-shadow:0 12px 25px rgba(0,0,0,0.3); transition: transform 0.3s;">
-      <i class="bi bi-cloud" style="font-size:45px; margin-bottom:20px;"></i>
-      <h3 style="margin-bottom:20px; font-size:24px;">Virtualisation & Administration Système</h3>
-      <p>Je déploie et gère des environnements virtuels et physiques :</p>
-      <ul style="text-align:left; font-size:15px; line-height:1.7; padding-left:20px;">
-        <li>Création et gestion de machines virtuelles (VirtualBox, VMware, Proxmox).</li>
-        <li>Configuration des réseaux virtuels : NAT, Bridge, Host-Only.</li>
-        <li>Installation et configuration de serveurs Linux et Windows.</li>
-        <li>Supervision des services et systèmes pour assurer disponibilité et fiabilité.</li>
-        <li>Optimisation et maintenance des environnements de test et production.</li>
-      </ul>
-      <p style="margin-top:15px; font-style:italic;">💡 Service idéal pour PME ou projets nécessitant virtualisation et administration systèmes.</p>
-    </div>
-
-  </div>
-</div>
-
-<style>
-#services-section div:hover {
-  transform: translateY(-10px) scale(1.03);
-  transition: transform 0.3s ease-in-out;
+.services-title {
+    text-align: center;
+    margin-bottom: 1.4rem;
+    font-size: 1.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-main);
+    position: relative;
 }
-</style>
-<div style="text-align:center; margin:30px 0;">
-  <a href="{{ path('accueil') }}" 
-     style="padding:12px 25px; background-color:#00ffc8; color:#212121; 
-            font-weight:bold; border-radius:10px; text-decoration:none; 
-            transition:0.3s; display:inline-block;">
-    Retour à l’Accueil
-  </a>
-</div>
+
+.services-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    margin: 0.6rem auto 0;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #f97316, #fb923c);
+}
+
+.services-intro {
+    max-width: 640px;
+    margin: 0 auto 1.6rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.4rem;
+}
+
+.service-card {
+    background: rgba(15, 23, 42, 0.96);
+    border-radius: 18px;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    padding: 1.3rem 1.2rem;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+    transition: transform 0.18s ease-out, box-shadow 0.18s ease-out, border-color 0.18s ease-out;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 50px rgba(15, 23, 42, 0.95);
+    border-color: rgba(249, 115, 22, 0.7);
+}
+
+.service-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(249, 115, 22, 0.12);
+    color: var(--accent);
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.service-card h3 {
+    font-size: 1.05rem;
+    margin: 0;
+    color: var(--text-main);
+}
+
+.service-card ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0.2rem 0 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.service-card li {
+    position: relative;
+    padding-left: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.service-card li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent);
+}
+
+.services-footer {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .services-title {
+        font-size: 1.4rem;
+        letter-spacing: 0.12em;
+    }
+}
+{% endblock %}

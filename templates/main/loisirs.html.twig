@@ -3,120 +3,198 @@
 {% block title %}Mes loisirs – Khadim Diagne{% endblock %}
 
 {% block body %}
+<section id="loisirs" class="hobbies-section">
 
-<section class="container py-5">
+    <h2 class="section-title hobbies-title">Mes loisirs</h2>
 
-    <!-- TITRE -->
-    <div class="text-center mb-5">
-        <h1 class="title-loisirs text-green">Mes loisirs</h1>
-            </div> 
-        <p class="text-muted">
+    <p class="hobbies-subtitle">
+        Ce qui nourrit ma créativité, mon équilibre et ma motivation au quotidien.
+    </p>
 
-              Ce qui nourrit ma créativité, mon équilibre et ma motivation au quotidien.
-        </p>
-    </div>
-
-    <!-- INTRODUCTION -->
-    <div class="intro-loisirs mb-5 p-4 shadow-sm border rounded bg-white">
-        <h4>
-            En dehors de mes études en Réseaux & Télécommunications, je cultive plusieurs passions 
-            qui contribuent à mon équilibre personnel et à mon développement. Ces loisirs renforcent 
-            ma créativité, ma rigueur, mais aussi ma capacité à travailler en équipe et à m’adapter 
+    <div class="hobbies-intro">
+        <p>
+            En dehors de mes études en Réseaux & Télécommunications, je cultive plusieurs passions
+            qui contribuent à mon équilibre personnel et à mon développement. Ces loisirs renforcent
+            ma créativité, ma rigueur, mais aussi ma capacité à travailler en équipe et à m’adapter
             à différents environnements.
         </p>
-            </div>
     </div>
 
-    <!-- ICÔNES AVEC DESCRIPTIONS -->
-    <div class="row g-4">
-
+    <div class="hobbies-grid">
         <!-- SPORT -->
-        <div class="col-md-4">
-            <div class="card card-loisir h-100 p-3 text-center">
-                <i class="bi bi-bicycle icon-loisir"></i>
-                <h4 class="text-green mt-3">Sport</h4>
-                <p class="small">
-                    Le sport m’apprend la discipline, le dépassement de soi et l’esprit d’équipe —
-                    des valeurs essentielles pour réussir dans les projets techniques.
-                </p>
-            </div>
-        </div>
+        <article class="hobby-card">
+            <i class="bi bi-bicycle icon-loisir"></i>
+            <h3>Sport</h3>
+            <p>
+                Le sport m’apprend la discipline, le dépassement de soi et l’esprit d’équipe,
+                des valeurs essentielles pour réussir dans les projets techniques.
+            </p>
+        </article>
 
         <!-- MUSIQUE -->
-        <div class="col-md-4">
-            <div class="card card-loisir h-100 p-3 text-center">
-                <i class="bi bi-music-note-beamed icon-loisir"></i>
-                <h4 class="text-green mt-3">Musique</h4>
-                <p class="small">
-                    Elle stimule ma créativité, améliore ma concentration et m’ouvre à la diversité 
-                    culturelle et artistique.
-                </p>
-            </div>
-        </div>
+        <article class="hobby-card">
+            <i class="bi bi-music-note-beamed icon-loisir"></i>
+            <h3>Musique</h3>
+            <p>
+                Elle stimule ma créativité, améliore ma concentration et m’ouvre à la diversité
+                culturelle et artistique.
+            </p>
+        </article>
 
         <!-- LECTURE -->
-        <div class="col-md-4">
-            <div class="card card-loisir h-100 p-3 text-center">
-                <i class="bi bi-book icon-loisir"></i>
-                <h4 class="text-green mt-3">Lecture</h4>
-                <p class="small">
-                    La lecture développe mon esprit d’analyse, ma curiosité et nourrit ma réflexion, 
-                    que ce soit à travers des ouvrages techniques, historiques ou inspirants.
-                </p>
-            </div>
-        </div>
+        <article class="hobby-card">
+            <i class="bi bi-book icon-loisir"></i>
+            <h3>Lecture</h3>
+            <p>
+                La lecture développe mon esprit d’analyse, ma curiosité et nourrit ma réflexion,
+                que ce soit à travers des ouvrages techniques, historiques ou inspirants.
+            </p>
+        </article>
 
         <!-- TECHNOLOGIE -->
-        <div class="col-md-4">
-            <div class="card card-loisir h-100 p-3 text-center">
-                <i class="bi bi-cpu icon-loisir"></i>
-                <h4 class="text-green mt-3">Technologie</h4>
-                <p class="small">
-                    Je suis passionné par la cybersécurité, les réseaux, l’IA et les innovations 
-                    technologiques. J’effectue une veille régulière pour rester à jour.
-                </p>
-            </div>
-        </div>
+        <article class="hobby-card">
+            <i class="bi bi-cpu icon-loisir"></i>
+            <h3>Technologie</h3>
+            <p>
+                Je suis passionné par la cybersécurité, les réseaux, l’IA et les innovations
+                technologiques. J’effectue une veille régulière pour rester à jour.
+            </p>
+        </article>
 
         <!-- PHOTOGRAPHIE -->
-        <div class="col-md-4">
-            <div class="card card-loisir h-100 p-3 text-center">
-                <i class="bi bi-camera icon-loisir"></i>
-                <h4 class="text-green mt-3">Photographie</h4>
-                <p class="small">
-                    La photo m’aide à aiguiser mon sens du détail, de la composition et de 
-                    l'observation — des compétences utiles même en informatique.
-                </p>
-            </div>
-        </div>
+        <article class="hobby-card">
+            <i class="bi bi-camera icon-loisir"></i>
+            <h3>Photographie</h3>
+            <p>
+                La photo m’aide à aiguiser mon sens du détail, de la composition et de
+                l’observation, des compétences utiles même en informatique.
+            </p>
+        </article>
 
         <!-- VOYAGES -->
-        <div class="col-md-4">
-            <div class="card card-loisir h-100 p-3 text-center">
-                <i class="bi bi-geo-alt icon-loisir"></i>
-                <h4 class="text-green mt-3">Voyages</h4>
-                <p class="small">
-                    Découvrir d’autres villes, d’autres cultures et rencontrer de nouvelles personnes 
-                    enrichit ma vision du monde et ma capacité d’adaptation.
-                </p>
-            </div>
-        </div>
-
+        <article class="hobby-card">
+            <i class="bi bi-geo-alt icon-loisir"></i>
+            <h3>Voyages</h3>
+            <p>
+                Découvrir d’autres villes, d’autres cultures et rencontrer de nouvelles personnes
+                enrichit ma vision du monde et ma capacité d’adaptation.
+            </p>
+        </article>
     </div>
-    <h3>
-    Ces loisirs, en plus d’être des sources de plaisir, contribuent à mon développement personnel 
-    et complètent parfaitement mon parcours académique.
-</h3>
-    </div>    </div>    </div>
+
+    <p class="hobbies-conclusion">
+        Ces loisirs, en plus d’être des sources de plaisir, contribuent à mon développement personnel
+        et complètent parfaitement mon parcours académique.
+    </p>
+
+    <div class="hobbies-back">
+        <a href="{{ path('accueil') }}" class="btn-ghost">
+            <i class="bi bi-house-door"></i>
+            Retour à l’accueil
+        </a>
+    </div>
 </section>
+{% endblock %}
 
-<div style="text-align:center; margin:30px 0;">
-  <a href="{{ path('accueil') }}" 
-     style="padding:12px 25px; background-color:#00ffc8; color:#212121; 
-            font-weight:bold; border-radius:10px; text-decoration:none; 
-            transition:0.3s; display:inline-block;">
-    Retour à l’Accueil
-  </a>
-</div>
+{% block page_styles %}
+.hobbies-section {
+    max-width: 1120px;
+    margin: 0 auto;
+}
 
+.hobbies-title {
+    text-align: center;
+    margin-bottom: 0.6rem;
+    font-size: 1.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-main);
+    position: relative;
+}
+
+.hobbies-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    margin: 0.6rem auto 0;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #f97316, #fb923c);
+}
+
+.hobbies-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.4rem;
+}
+
+.hobbies-intro {
+    max-width: 720px;
+    margin: 0 auto 1.8rem;
+    background: rgba(15, 23, 42, 0.96);
+    border-radius: 18px;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    padding: 1.2rem 1.3rem;
+    color: var(--text-muted);
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+}
+
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.3rem;
+}
+
+.hobby-card {
+    background: rgba(15, 23, 42, 0.96);
+    border-radius: 18px;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    padding: 1.2rem 1.1rem;
+    text-align: center;
+    color: var(--text-muted);
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, border-color 0.2s ease-out;
+}
+
+.hobby-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 50px rgba(15, 23, 42, 1);
+    border-color: rgba(249, 115, 22, 0.7);
+}
+
+.hobby-card h3 {
+    margin-top: 0.6rem;
+    margin-bottom: 0.4rem;
+    color: var(--text-main);
+    font-size: 1.05rem;
+}
+
+.hobby-card p {
+    font-size: 0.9rem;
+}
+
+.icon-loisir {
+    font-size: 1.9rem;
+    color: var(--accent);
+}
+
+.hobbies-conclusion {
+    margin-top: 1.8rem;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.hobbies-back {
+    margin-top: 1.4rem;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .hobbies-title {
+        font-size: 1.4rem;
+        letter-spacing: 0.12em;
+    }
+}
 {% endblock %}

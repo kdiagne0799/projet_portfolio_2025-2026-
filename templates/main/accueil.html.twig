@@ -1,243 +1,702 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}°Projet--_Khadim_Diagne--2025-2026°{% endblock %}
+{% block title %}Accueil – KHADIM DIAGNE{% endblock %}
 
 {% block body %}
+        
+         <section class="welcome-strip">
+            <div class="welcome-text">
+                <span class="welcome-kicker">Bonjour et bienvenue</span>
+                <h2>Ravi de vous voir ici&nbsp;!</h2>
+                <p>
+                    Ce site rassemble mon parcours, mes projets et mes compétences en réseaux, systèmes
+                    et développement web sécurisé. Explorez les différentes sections pour mieux me découvrir.
+                </p>
+            </div>
+        </section>
+<section class="home-grid">
+    <!-- Colonne gauche : profil + CV -->
+    <div class="home-left">
+        <div class="profile-card">
+            <div class="profile-avatar-shell">
+                <div class="profile-avatar-ring"></div>
+                <img src="{{ asset('image/profil.jpg') }}" alt="Photo de profil de KHADIM DIAGNE" class="profile-avatar-img">
+            </div>
 
-<section class="accueil">
+            <div class="profile-header">
+                <h1 class="profile-name">Khadim Diagne</h1>
+                <p class="profile-role">Étudiant BUT Réseaux & Télécommunications – Groupe B2</p>
+                <p class="profile-location"><i class="bi bi-geo-alt"></i> Roanne · Université Jean-Monnet</p>
+            </div>
 
-  <!-- Photo + Documents -->
-  <div class="media-section">
+            <div class="profile-highlight">
+                <p>Mastering technologies to build a responsible digital future.</p>
+            </div>
 
-    <img src="{{ asset('image/profil.jpg') }}" alt="KHADIM DIAGNE Profile Photo" class="profil-img">
+            <div class="profile-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Âge</span>
+                    <span class="meta-value">19 ans</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Spécialité</span>
+                    <span class="meta-value">Réseaux & Télécommunications</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Objectif</span>
+                    <span class="meta-value">Ingénierie & cybersécurité</span>
+                </div>
+            </div>
 
+            <div class="profile-actions">
+                <button type="button" class="btn-main" onclick="toggleCvPanel()">
+                    <i class="bi bi-file-earmark-person"></i>
+                    Accéder à mon CV
+                </button>
+            </div>
+        </div>
 
-<!-- Bouton pour voir mon CV avec une couleur verte fluo -->
-<div class="button-section">
-  <button onclick="showForm()" class="btn btn-info btn-see-my-cv">Access my CV</button>
-</div>
+        <!-- Panneau CV (formulaire + liens) -->
+        <div id="cv-panel" class="cv-panel" aria-hidden="true">
+            <h2 class="cv-title">Consulter et télécharger mon CV</h2>
+            <p class="cv-intro">
+                Remplissez ces quelques informations, puis accédez à mon CV en ligne pour l’explorer, le télécharger ou l’imprimer.
+            </p>
 
-<!-- Formulaire d'inscription -->
-<div class="form-section" id="form-section" style="display:none;">
-  <h2>Sign up to view and download my CV</h2>
-  <form id="cv-form" onsubmit="return validateForm()" autocomplete="off">
-    <label for="firstName">First Name:</label>
-    <input type="text" id="firstName" name="firstName" required onkeydown="moveToNextField(event, 'lastName')" /><br>
+            <form id="cv-form" class="cv-form" onsubmit="return handleCvForm(event)" autocomplete="off">
+                <div class="cv-grid">
+                    <div class="field">
+                        <label for="firstName">Prénom</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="field">
+                        <label for="lastName">Nom</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
 
-    <label for="lastName">Last Name:</label>
-    <input type="text" id="lastName" name="lastName" required onkeydown="moveToNextField(event, 'email')" /><br>
+                <div class="field">
+                    <label for="email">Adresse e‑mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required onkeydown="moveToNextField(event, 'address')" /><br>
+                <div class="field">
+                    <label for="address">Ville / Pays</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
 
-    <label for="address">Address:</label>
-    <input type="text" id="address" name="address" required onkeydown="moveToNextField(event, 'profession')" /><br>
+                <div class="field">
+                    <label for="profession">Profession / Statut</label>
+                    <input type="text" id="profession" name="profession" required>
+                </div>
 
-    <label for="profession">Profession:</label>
-    <input type="text" id="profession" name="profession" required /><br>
+                <div class="cv-actions">
+                    <button type="submit" class="btn-main">
+                        <i class="bi bi-unlock"></i>
+                        Débloquer l’accès au CV
+                    </button>
+                </div>
+            </form>
 
-    <button type="submit">Submit</button>
-  </form>
-</div>
+            <div id="cv-links" class="cv-links" hidden>
+                <p class="cv-success">
+                    <i class="bi bi-check-circle-fill"></i>
+                    Merci ! Vous pouvez maintenant consulter, télécharger ou imprimer mon CV.
+                </p>
 
-<!-- Section pour afficher et télécharger/imprimer mon CV -->
-<div class="documents-section" id="cv-docs" style="display:none;">
- 
+                <div class="cv-links-buttons">
+                    <button type="button" class="btn-outline" onclick="viewMyCV()">
+                        <i class="bi bi-window-sidebar"></i>
+                        Ouvrir le CV dans un nouvel onglet
+                    </button>
+                    <a href="{{ asset('cv/cv_Khadim_Diagne.html') }}" class="btn-main" download>
+                        <i class="bi bi-download"></i>
+                        Télécharger le CV
+                    </a>
+                    <button type="button" class="btn-ghost-small" onclick="printCV()">
+                        <i class="bi bi-printer"></i>
+                        Imprimer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <!-- Ajouter le bouton "" -->
-  <button onclick="viewMyCV()" class="btn btn-secondary" style="margin-bottom:10px;">View my CV</button>
+    <!-- Colonne droite : présentation + compétences + loisirs -->
+    <div class="home-right">
+        <section class="about-card">
+            <h2>Qui suis‑je&nbsp;?</h2>
+            <p>
+                Étudiant passionné par les systèmes intelligents, l’architecture réseau et le développement web sécurisé,
+                je construis des projets qui allient performances techniques et clarté d’usage.
+            </p>
+            <p>
+                Mon objectif : développer des solutions fiables, documentées et maintenables, tout en restant à l’écoute 
+                des besoins concrets des utilisateurs.
+            </p>
+        </section>
 
-  <div class="download-box">
-    <h4>Click the links below to download or print my CV</h4>
-    <a href="{{ asset('cv/cv_Khadim_Diagne.html') }}" class="btn btn-success" download>
-      <i class="bi bi-download"></i> Download CV
-    </a>
+        <section class="info-row">
+            <div class="info-card">
+                <h3>Envies & centre d’intérêt</h3>
+                <p>
+                    Découvrez mes passions, mes projets personnels et ce qui me motive au quotidien.
+                </p>
+                <a href="{{ path('loisirs') }}" class="btn-outline">
+                    <i class="bi bi-heart-pulse"></i>
+                    Voir mes loisirs
+                </a>
+            </div>
 
-    <!-- Mise en forme des boutons -->
-    <button onclick="printCV()" class="btn btn-primary" style="margin-top:10px;">
-      🖨️ Print CV
-    </button>
-  </div>
-</div>
+            <div class="info-card">
+                <h3>Domaines de compétences</h3>
+                <ul class="skills-list">
+                    <li><i class="bi bi-terminal"></i> Administration avancée de systèmes Linux</li>
+                    <li><i class="bi bi-braces"></i> Python pour l’automatisation & la sécurité</li>
+                    <li><i class="bi bi-shield-lock"></i> Développement web sécurisé (Symfony)</li>
+                    <li><i class="bi bi-diagram-3"></i> Conception d’architectures réseaux intelligentes</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</section></section>
 
-<script>
-// Fonction pour afficher le formulaire après le clic sur "Voir mon CV"
-function showForm() {
-    document.getElementById('form-section').style.display = 'block';  // Afficher le formulaire
-    document.querySelector('.button-section').style.display = 'none';  // Cacher le bouton "Voir mon CV"
-}
+<!-- GRAND CADRE PORTFOLIO PLEINE LARGEUR -->
+<section class="portfolio-banner">
+    <div class="portfolio-banner-inner">
+        <div class="portfolio-banner-text">
+            <span class="portfolio-kicker">Projets & réalisations</span>
+            <h2>Mes projets techniques en détail</h2>
+            <p>
+                Consultez mon e‑portfolio pour découvrir les travaux pratiques, projets de semestre
+                et expérimentations qui illustrent ma progression.
+            </p>
+        </div>
+        <a href="{{ path('mon_e_portfolio') }}" class="btn-primary-xl portfolio-btn">
+            <i class="bi bi-collection"></i>
+            Ouvrir l’e‑portfolio
+        </a>
+    </div>
+</section>
 
-// Fonction pour déplacer le focus vers le champ suivant avec "Entrée"
-function moveToNextField(event, nextFieldId) {
-    if (event.key === 'Enter') {
-        event.preventDefault(); // Empêcher le formulaire de se soumettre
-        document.getElementById(nextFieldId).focus(); // Déplacer le focus vers le champ suivant
-    }
-}
+    
 
-// Fonction de validation du formulaire
-function validateForm() {
-    const firstName = document.getElementById('firstName');
-    const lastName = document.getElementById('lastName');
-    const email = document.getElementById('email');
-    const address = document.getElementById('address');
-    const profession = document.getElementById('profession');
-
-    let valid = true;
-
-    // Validation des champs
-    if (firstName.value.length < 2) {
-        firstName.classList.add('invalid');
-        valid = false;
-    } else {
-        firstName.classList.remove('invalid');
-    }
-
-    if (lastName.value.length < 2) {
-        lastName.classList.add('invalid');
-        valid = false;
-    } else {
-        lastName.classList.remove('invalid');
-    }
-
-    // Validation de l'email : au moins 3 caractères, un @, et un domaine valide (.com, .fr, etc.)
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (email.value.length < 3 || !emailPattern.test(email.value)) {
-        email.classList.add('invalid');
-        valid = false;
-    } else {
-        email.classList.remove('invalid');
-    }
-
-    // Validation de l'adresse
-    if (address.value.length < 3) {
-        address.classList.add('invalid');
-        valid = false;
-    } else {
-        address.classList.remove('invalid');
-    }
-
-    // Validation de la profession : minimum 2 caractères
-    if (profession.value.length < 2) {
-        profession.classList.add('invalid');
-        valid = false;
-    } else {
-        profession.classList.remove('invalid');
-    }
-
-    if (!valid) {
-        alert("Please fill in all the fields correctly.");
-    } else {
-        alert("Thank you! Now you can view and download my CV.");
-        document.getElementById('cv-docs').style.display = 'block'; // Afficher le CV
-    }
-
-    return false; // Empêcher l'envoi du formulaire
-}
-
-// Fonction pour voir mon CV après la soumission du formulaire
-function viewMyCV() {
-    // Ouvrir une nouvelle page pour voir le CV
-    window.open('{{ asset("cv/cv_Khadim_Diagne.html") }}', '_blank');
-}
-
-// Fonction pour imprimer mon CV
-function printCV() {
-    const cvWindow = window.open('{{ asset("cv/cv_Khadim_Diagne.html") }}', '_blank');
-    cvWindow.onload = function () {
-        cvWindow.print();
-    };
-}
-</script>
-
-<!-- Inclure la bibliothèque jsPDF pour générer le PDF (si nécessaire) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
+{% block page_styles %}
 <style>
-/* Style pour les champs invalides */
-.invalid {
-    border: 2px solid red;
-    background-color: #ffe6e6;
-}
+    .home-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.6fr);
+        gap: 2.4rem;
+        margin-top: 1.8rem;
+    }
 
-/* Style pour le bouton "See My CV" en vert fluo */
-.btn-see-my-cv {
-    background-color: #18ce48ff; /* Vert fluo */
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
-}
+    .home-left,
+    .home-right {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+    }
 
-/* Effet au survol du bouton "See My CV" */
-.btn-see-my-cv:hover {
-    background-color: #118d2cff; /* Vert plus foncé */
-}
+    .profile-card {
+        background: rgba(15, 23, 42, 0.96);
+        border-radius: 1.4rem;
+        border: 1px solid rgba(148, 163, 184, 0.45);
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+        padding: 1.6rem 1.5rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .profile-card::before {
+        content: '';
+        position: absolute;
+        inset: -30%;
+        background:
+            radial-gradient(circle at 0 0, rgba(249, 115, 22, 0.18), transparent 55%),
+            radial-gradient(circle at 100% 100%, rgba(56, 189, 248, 0.16), transparent 60%);
+        opacity: 0.7;
+        pointer-events: none;
+    }
+
+    .profile-avatar-shell {
+        position: relative;
+        width: 104px;
+        height: 104px;
+        margin-bottom: 0.9rem;
+    }
+
+    .profile-avatar-ring {
+        position: absolute;
+        inset: 0;
+        border-radius: 999px;
+        background: conic-gradient(from 220deg, #f97316, #22c55e, #38bdf8, #f97316);
+        opacity: 0.8;
+        filter: blur(1px);
+        animation: spin 10s linear infinite;
+    }
+
+    .profile-avatar-img {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        border-radius: 999px;
+        object-fit: cover;
+        border: 3px solid rgba(15, 23, 42, 0.9);
+    }
+
+    .profile-header {
+        position: relative;
+        z-index: 1;
+        margin-bottom: 0.8rem;
+    }
+
+    .profile-name {
+        margin: 0 0 0.2rem;
+        font-size: 1.35rem;
+        font-weight: 600;
+    }
+
+    .profile-role {
+        margin: 0;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+    }
+
+    .profile-location {
+        margin: 0.35rem 0 0;
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+    }
+
+    .profile-highlight {
+        position: relative;
+        z-index: 1;
+        margin-top: 0.8rem;
+        padding: 0.7rem 0.9rem;
+        border-radius: 0.9rem;
+        background: rgba(15, 23, 42, 0.98);
+        border: 1px solid rgba(148, 163, 184, 0.45);
+        font-size: 0.84rem;
+    }
+
+    .profile-meta {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.7rem;
+        margin: 1rem 0 1.1rem;
+        font-size: 0.78rem;
+    }
+
+    .meta-item {
+        padding: 0.6rem 0.65rem;
+        border-radius: 0.85rem;
+        background: rgba(15, 23, 42, 0.9);
+        border: 1px solid rgba(30, 64, 175, 0.65);
+    }
+
+    .meta-label {
+        display: block;
+        color: var(--text-muted);
+        margin-bottom: 0.15rem;
+    }
+
+    .meta-value {
+        font-weight: 500;
+    }
+
+    .profile-actions {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+    }
+
+    .btn-main,
+    .btn-outline,
+    .btn-ghost-small {
+        border-radius: 999px;
+        font-size: 0.85rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        cursor: pointer;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+    .btn-main {
+        padding: 0.65rem 1.4rem;
+        border: none;
+        background: linear-gradient(135deg, #f97316, #fb923c);
+        color: #0f172a;
+        font-weight: 600;
+        box-shadow: 0 14px 30px rgba(249, 115, 22, 0.4);
+        transition: transform 0.16s ease-out, box-shadow 0.16s ease-out, filter 0.16s ease-out;
+    }
+
+    .btn-main:hover {
+        transform: translateY(-1px);
+        filter: brightness(1.03);
+        box-shadow: 0 18px 40px rgba(249, 115, 22, 0.55);
+    }
+
+    .btn-outline {
+        padding: 0.6rem 1.3rem;
+        border: 1px solid rgba(148, 163, 184, 0.7);
+        background: rgba(15, 23, 42, 0.96);
+        color: var(--text-main);
+        font-weight: 500;
+        transition: background 0.16s ease-out, color 0.16s ease-out, border-color 0.16s ease-out, transform 0.16s ease-out;
+    }
+
+    .btn-outline:hover {
+        background: rgba(15, 23, 42, 1);
+        border-color: var(--accent);
+        color: var(--accent);
+        transform: translateY(-1px);
+    }
+
+    .btn-ghost-small {
+        padding: 0.4rem 0.95rem;
+        border: 1px solid rgba(148, 163, 184, 0.5);
+        background: transparent;
+        color: var(--text-muted);
+        font-size: 0.78rem;
+        transition: background 0.16s ease-out, color 0.16s ease-out, border-color 0.16s ease-out, transform 0.16s ease-out;
+    }
+
+    .btn-ghost-small:hover {
+        background: rgba(15, 23, 42, 0.9);
+        color: var(--accent);
+        border-color: var(--accent);
+        transform: translateY(-1px);
+    }
+
+    .cv-panel {
+        background: rgba(15, 23, 42, 0.96);
+        border-radius: 1.1rem;
+        border: 1px solid rgba(148, 163, 184, 0.4);
+        padding: 1.3rem 1.4rem 1.5rem;
+        box-shadow: 0 16px 36px rgba(15, 23, 42, 0.85);
+        transform-origin: top;
+        transform: scaleY(0.96);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.22s ease-out, transform 0.22s ease-out;
+    }
+
+    .cv-panel.is-open {
+        opacity: 1;
+        transform: scaleY(1);
+        pointer-events: auto;
+    }
+
+    .cv-title {
+        margin: 0 0 0.35rem;
+        font-size: 1.05rem;
+        font-weight: 600;
+    }
+
+    .cv-intro {
+        margin: 0 0 1.1rem;
+        font-size: 0.86rem;
+        color: var(--text-muted);
+    }
+
+    .cv-form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+    }
+
+    .cv-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.8rem;
+    }
+
+    .field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        font-size: 0.82rem;
+    }
+
+    .field label {
+        color: var(--text-muted);
+    }
+
+    .field input {
+        border-radius: 0.7rem;
+        padding: 0.55rem 0.7rem;
+        border: 1px solid rgba(148, 163, 184, 0.6);
+        background: rgba(15, 23, 42, 0.96);
+        color: var(--text-main);
+        font-size: 0.85rem;
+        outline: none;
+        transition: border-color 0.16s ease-out, box-shadow 0.16s ease-out, background 0.16s ease-out;
+    }
+
+    .field input:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 1px rgba(249, 115, 22, 0.4);
+        background: rgba(15, 23, 42, 1);
+    }
+
+    .field input.invalid {
+        border-color: #ef4444;
+        background: rgba(127, 29, 29, 0.2);
+    }
+
+    .cv-actions {
+        margin-top: 0.4rem;
+    }
+
+    .cv-links {
+        margin-top: 1rem;
+        border-top: 1px dashed rgba(55, 65, 81, 0.8);
+        padding-top: 0.9rem;
+        font-size: 0.85rem;
+    }
+
+    .cv-success {
+        display: flex;
+        align-items: center;
+        gap: 0.45rem;
+        color: #bbf7d0;
+        margin: 0 0 0.9rem;
+    }
+
+    .cv-success i {
+        color: #22c55e;
+    }
+
+    .cv-links-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+    }
+
+    .about-card {
+        background: rgba(15, 23, 42, 0.96);
+        border-radius: 1.1rem;
+        border: 1px solid rgba(148, 163, 184, 0.45);
+        padding: 1.4rem 1.5rem;
+        box-shadow: 0 16px 34px rgba(15, 23, 42, 0.9);
+        font-size: 0.9rem;
+    }
+
+    .about-card h2 {
+        margin: 0 0 0.7rem;
+        font-size: 1.15rem;
+    }
+
+    .about-card p {
+        margin: 0.2rem 0;
+        color: var(--text-muted);
+    }
+
+    .info-row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.4rem;
+    }
+
+    .info-card {
+        background: rgba(15, 23, 42, 0.96);
+        border-radius: 1.1rem;
+        border: 1px solid rgba(148, 163, 184, 0.45);
+        padding: 1.1rem 1.2rem;
+        font-size: 0.86rem;
+    }
+
+    .info-card h3 {
+        margin: 0 0 0.5rem;
+        font-size: 1rem;
+    }
+
+    .info-card p {
+        margin: 0 0 0.7rem;
+        color: var(--text-muted);
+    }
+
+    .skills-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 0.4rem;
+    }
+
+    .skills-list li {
+        display: flex;
+        align-items: center;
+        gap: 0.45rem;
+        font-size: 0.86rem;
+    }
+
+    .skills-list i {
+        color: var(--accent);
+    }
+
+    /* Bannière portfolio PLEINE LARGEUR (en dehors de home-grid) */
+    .portfolio-banner {
+        margin-top: 2rem;
+    }
+
+    .portfolio-banner-inner {
+        max-width: 1120px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.4rem;
+        padding: 1.6rem 1.8rem;
+        border-radius: 22px;
+        background:
+            radial-gradient(circle at 0 0, rgba(249,115,22,0.28), transparent 55%),
+            radial-gradient(circle at 100% 100%, rgba(56,189,248,0.25), transparent 60%),
+            linear-gradient(135deg, #020617, #020617);
+        border: 1px solid rgba(251, 146, 60, 0.7);
+        box-shadow: 0 24px 60px rgba(15, 23, 42, 0.95);
+    }
+
+    .portfolio-banner-text h2 {
+        margin: 0 0 0.4rem;
+        font-size: 1.25rem;
+    }
+
+    .portfolio-banner-text p {
+        margin: 0;
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        max-width: 32rem;
+    }
+
+    .portfolio-kicker {
+        display: inline-block;
+        margin-bottom: 0.4rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(248, 250, 252, 0.8);
+    }
+
+    .btn-primary-xl {
+        border-radius: 999px;
+        padding: 0.8rem 1.8rem;
+        border: none;
+        background: linear-gradient(135deg, #f97316, #fb923c);
+        color: #0f172a;
+        font-size: 0.92rem;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        text-decoration: none;
+        box-shadow: 0 16px 40px rgba(249, 115, 22, 0.55);
+        cursor: pointer;
+        white-space: nowrap;
+        transition: transform 0.16s ease-out, box-shadow 0.16s ease-out, filter 0.16s ease-out;
+    }
+
+    .btn-primary-xl:hover {
+        transform: translateY(-1px);
+        filter: brightness(1.04);
+        box-shadow: 0 22px 55px rgba(249, 115, 22, 0.65);
+    }
+
+    .portfolio-btn {
+        white-space: nowrap;
+    }
+
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 980px) {
+        .home-grid {
+            grid-template-columns: minmax(0, 1fr);
+        }
+    }
+
+    @media (max-width: 880px) {
+        .portfolio-banner-inner {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .info-row {
+            grid-template-columns: minmax(0, 1fr);
+        }
+    }
 </style>
-  </div>
+{% endblock %}
 
-  <!-- Content Block -->
-  <div class="contenu">
+{% block javascripts %}
+<script>
+    function toggleCvPanel() {
+        const panel = document.getElementById('cv-panel');
+        const isOpen = panel.classList.contains('is-open');
+        panel.classList.toggle('is-open', !isOpen);
+        panel.setAttribute('aria-hidden', isOpen ? 'true' : 'false');
+    }
 
-    <h1>KHADIM DIAGNE–GROUP-B2</h1>
-    <p class="accroche">Mastering technologies to build a responsible digital future</p>
+    function handleCvForm(event) {
+        event.preventDefault();
 
-    <div id="profil-card" class="theme theme-lumineux">
-      <h1>Building strong connections in an interconnected world.</h1>
-    </div>
+        const fields = ['firstName', 'lastName', 'email', 'address', 'profession'];
+        let valid = true;
 
-    <div class="presentation"></div>
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-    <p><strong>Age:</strong> 19 years old</p>
-    <p><strong>City:</strong> Roanne</p>
-    <p><strong>Degree:</strong> BUT Networks & Telecommunications – Jean-Monnet University, Saint-Étienne</p>
-    <p><strong>Profile:</strong> A passionate student focusing on intelligent systems, network architecture, and secure web development.</p>
+        fields.forEach(id => {
+            const input = document.getElementById(id);
+            input.classList.remove('invalid');
 
-    <div style="background-color: #d4edda; padding: 20px;">
-      <p><strong>Want to know more?</strong></p>
-      <p>Discover my passions, personal projects, and what drives me daily.</p>
-      <a href="/loisirs">See my hobbies</a>
-    </div>
+            if (!input.value || input.value.trim().length < 2) {
+                valid = false;
+                input.classList.add('invalid');
+            }
+        });
 
-    <!-- Skills -->
-    <div class="competences">
-      <h2>My Areas of Expertise</h2>
-      <ul>
-        <li>🖥️ Advanced Linux System Administration</li>
-        <li>🐍 Python Programming for Automation & Security</li>
-        <li>🛡️ Secure Web Development with Symfony</li>
-        <li>🌐 Design & Optimization of Intelligent Network Architectures</li>
-      </ul>
-    </div>
+        const emailInput = document.getElementById('email');
+        if (!emailPattern.test(emailInput.value)) {
+            valid = false;
+            emailInput.classList.add('invalid');
+        }
 
-  </div>
+        if (!valid) {
+            alert('Merci de vérifier les informations saisies.');
+            return false;
+        }
 
-</section>
+        document.getElementById('cv-links').hidden = false;
+        return false;
+    }
 
-<!-- Background Section -->
-<section class="accueil-background">
-  <div class="contenu fade-in">
-    <h1>Welcome to the world of my achievements</h1>
-    <p>Explore my portfolio, discover my projects, and access documents that reflect my skills.</p>
-    <a href="{{ path('mon_e_portfolio') }}" class="doc-button bw">📁 View my e-Portfolio</a>
-  </div>
-</section>
+    function viewMyCV() {
+        window.open('{{ asset("cv/cv_Khadim_Diagne.html") }}', '_blank');
+    }
 
-
-<!-- Theme Button -->
-<div style="text-align: center; margin-top: 20px; margin-bottom: 40px;">
-  <button id="themeButton" class="change-theme">🎨 Change Theme</button>
-</div>
-
-
-
-<!-- Footer -->
-<footer class="footer-strict">
-  <span>&copy; KHADIM DIAGNE – This website and all its content are protected. Unauthorized reproduction, copying, or distribution is strictly prohibited.</span>
-</footer>
+    function printCV() {
+        const cvWindow = window.open('{{ asset("cv/cv_Khadim_Diagne.html") }}', '_blank');
+        cvWindow.onload = function () {
+            cvWindow.print();
+        };
+    }
+</script>
+{% endblock %}
 
 {% endblock %}
