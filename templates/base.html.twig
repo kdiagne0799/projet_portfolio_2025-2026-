@@ -292,25 +292,30 @@
         }
 
         .btn-ghost {
-            border-radius: var(--radius-pill);
-            padding: 0.7rem 1.3rem;
-            border: 1px solid var(--border-subtle);
-            background: rgba(15, 23, 42, 0.8);
-            color: var(--text-main);
-            font-size: 0.86rem;
-            font-weight: 500;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
-        }
+    border-radius: var(--radius-pill);
+    padding: 0.7rem 1.3rem;
+    border: 1px solid var(--border-subtle);
+    background: rgba(15, 23, 42, 0.8);
+    color: var(--text-main);
+    font-size: 0.86rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none; /* enlève le souligné du lien */
+    transition: background var(--transition-fast),
+                color var(--transition-fast),
+                border-color var(--transition-fast),
+                transform var(--transition-fast);
+}
+
 
         .btn-ghost:hover {
             background: rgba(15, 23, 42, 1);
             border-color: var(--accent);
             color: var(--accent);
-            transform: translateY(-1px);
+            transform: translateY(-2px);
         }
 
         .hero-metadata {

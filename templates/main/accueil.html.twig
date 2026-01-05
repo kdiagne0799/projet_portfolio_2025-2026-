@@ -3,18 +3,19 @@
 {% block title %}Accueil – KHADIM DIAGNE{% endblock %}
 
 {% block body %}
-        
-         <section class="welcome-strip">
-            <div class="welcome-text">
-                <span class="welcome-kicker">Bonjour et bienvenue sur mon espace professionnel</span>
-                <h2>Ravi de vous voir ici&nbsp;!</h2>
-                <p>
-Ce site présente mon parcours, mes réalisations et mes compétences en réseaux, systèmes et développement web sécurisé. Parcourez les différentes sections pour découvrir mon profil plus en détail.
-                </p>
-            </div>
-        </section>
+<section class="welcome-strip">
+    <div class="welcome-text">
+        <span class="welcome-kicker">Bonjour et bienvenue sur mon espace professionnel</span>
+        <h2>Ravi de vous voir ici&nbsp;!</h2>
+        <p>
+            Ce site présente mon parcours, mes réalisations et mes compétences en réseaux, systèmes et développement web sécurisé.
+            Parcourez les différentes sections pour découvrir mon profil plus en détail.
+        </p>
+    </div>
+</section>
+
 <section class="home-grid">
-    <!-- Colonne gauche : profil + CV -->
+    <!-- Colonne gauche : profil -->
     <div class="home-left">
         <div class="profile-card">
             <div class="profile-avatar-shell">
@@ -25,11 +26,13 @@ Ce site présente mon parcours, mes réalisations et mes compétences en réseau
             <div class="profile-header">
                 <h1 class="profile-name">Khadim Diagne</h1>
                 <p class="profile-role">Étudiant BUT Réseaux & Télécommunications – Groupe B2</p>
-                <p class="profile-location"><i class="bi bi-geo-alt"></i> Roanne · Université Jean-Monnet</p>
+                <p class="profile-location">
+                    <i class="bi bi-geo-alt"></i> Roanne · Université Jean-Monnet
+                </p>
             </div>
 
             <div class="profile-highlight">
-                <p>Développer une expertise technologique au service d’un avenir numérique responsable.</p>
+                <h2>Développer une expertise technologique au service d’un avenir numérique responsable.</h2>
             </div>
 
             <div class="profile-meta">
@@ -48,80 +51,12 @@ Ce site présente mon parcours, mes réalisations et mes compétences en réseau
             </div>
 
             <div class="profile-actions">
-                <button type="button" class="btn-main" onclick="toggleCvPanel()">
-                    <i class="bi bi-file-earmark-person"></i>
-                    Accéder à mon CV
-                </button>
-            </div>
-        </div>
-
-        <!-- Panneau CV (formulaire + liens) -->
-        <div id="cv-panel" class="cv-panel" aria-hidden="true">
-            <h2 class="cv-title">Consulter et télécharger mon CV</h2>
-            <p class="cv-intro">
-                Remplissez ces quelques informations, puis accédez à mon CV en ligne pour l’explorer, le télécharger ou l’imprimer.
-            </p>
-
-            <form id="cv-form" class="cv-form" onsubmit="return handleCvForm(event)" autocomplete="off">
-                <div class="cv-grid">
-                    <div class="field">
-                        <label for="firstName">Prénom</label>
-                        <input type="text" id="firstName" name="firstName" required>
-                    </div>
-                    <div class="field">
-                        <label for="lastName">Nom</label>
-                        <input type="text" id="lastName" name="lastName" required>
-                    </div>
-                </div>
-
-                <div class="field">
-                    <label for="email">Adresse e‑mail</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-                <div class="field">
-                    <label for="address">Ville / Pays</label>
-                    <input type="text" id="address" name="address" required>
-                </div>
-
-                <div class="field">
-                    <label for="profession">Profession / Statut</label>
-                    <input type="text" id="profession" name="profession" required>
-                </div>
-
-                <div class="cv-actions">
-                    <button type="submit" class="btn-main">
-                        <i class="bi bi-unlock"></i>
-                        Débloquer l’accès au CV
-                    </button>
-                </div>
-            </form>
-
-            <div id="cv-links" class="cv-links" hidden>
-                <p class="cv-success">
-                    <i class="bi bi-check-circle-fill"></i>
-                    Merci ! Vous pouvez maintenant consulter, télécharger ou imprimer mon CV.
-                </p>
-
-                <div class="cv-links-buttons">
-                    <button type="button" class="btn-outline" onclick="viewMyCV()">
-                        <i class="bi bi-window-sidebar"></i>
-                        Ouvrir le CV dans un nouvel onglet
-                    </button>
-                    <a href="{{ asset('cv/cv_Khadim_Diagne.html') }}" class="btn-main" download>
-                        <i class="bi bi-download"></i>
-                        Télécharger le CV
-                    </a>
-                    <button type="button" class="btn-ghost-small" onclick="printCV()">
-                        <i class="bi bi-printer"></i>
-                        Imprimer
-                    </button>
-                </div>
+                <!-- Bouton déplacé dans la section CV -->
             </div>
         </div>
     </div>
 
-    <!-- Colonne droite : présentation + compétences + loisirs -->
+    <!-- Colonne droite : présentation + liens vers autres pages -->
     <div class="home-right">
         <section class="about-card">
             <h2>Qui suis‑je&nbsp;?</h2>
@@ -137,7 +72,7 @@ Ce site présente mon parcours, mes réalisations et mes compétences en réseau
 
         <section class="info-row">
             <div class="info-card">
-                <h3>Envies & centre d’intérêt</h3>
+                <h3>Envies & centres d’intérêt</h3>
                 <p>
                     Découvrez mes passions, mes projets personnels et ce qui me motive au quotidien.
                 </p>
@@ -148,37 +83,96 @@ Ce site présente mon parcours, mes réalisations et mes compétences en réseau
             </div>
 
             <div class="info-card">
-                <h3>Domaines de compétences</h3>
-                <ul class="skills-list">
-                    <li><i class="bi bi-terminal"></i> Administration avancée de systèmes Linux</li>
-                    <li><i class="bi bi-braces"></i> Python pour l’automatisation & la sécurité</li>
-                    <li><i class="bi bi-shield-lock"></i> Développement web sécurisé (Symfony)</li>
-                    <li><i class="bi bi-diagram-3"></i> Conception d’architectures réseaux intelligentes</li>
-                </ul>
+                <h3>Compétences & services</h3>
+                <p>
+                    Accédez à une sélection de compétences mises en avant à partir des apprentissages critiques du BUT R&T.
+                </p>
+                <a href="{{ path('services') }}" class="btn-outline">
+                    <i class="bi bi-lightning-charge"></i>
+                    Voir mes services
+                </a>
             </div>
         </section>
     </div>
-</section></section>
-
-<!-- GRAND CADRE PORTFOLIO PLEINE LARGEUR -->
-<section class="portfolio-banner">
-    <div class="portfolio-banner-inner">
-        <div class="portfolio-banner-text">
-            <span class="portfolio-kicker">Projets & réalisations</span>
-            <h2>Mes projets techniques en détail</h2>
-            <p>
-                Consultez mon portfolio pour découvrir les travaux pratiques, projets de semestre
-                et expérimentations qui illustrent ma progression.
-            </p>
-        </div>
-        <a href="{{ path('mon_e_portfolio') }}" class="btn-primary-xl portfolio-btn">
-            <i class="bi bi-collection"></i>
-            Ouvrir le portfolio
-        </a>
-    </div>
 </section>
 
-    
+{# Section CV en bas : bouton TOUJOURS visible + panneau caché/affiché #}
+<section class="cv-section">
+    <h2 class="cv-title">Consulter et télécharger mon CV</h2>
+
+    {# Bouton visible en bas de page #}
+    <div class="cv-actions" style="margin-bottom:0.8rem;">
+        <button type="button" class="btn-main" onclick="toggleCvPanel()">
+            <i class="bi bi-file-earmark-person"></i>
+            Accéder à mon CV
+        </button>
+    </div>
+
+    {# Panneau qui se déplie #}
+    <div id="cv-panel" class="cv-panel" aria-hidden="true">
+        <p class="cv-intro">
+            Remplissez ces quelques informations, puis accédez à mon CV en ligne pour l’explorer, le télécharger ou l’imprimer.
+        </p>
+
+        <form id="cv-form" class="cv-form" onsubmit="return handleCvForm(event)" autocomplete="off">
+            <div class="cv-grid">
+                <div class="field">
+                    <label for="firstName">Prénom</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="field">
+                    <label for="lastName">Nom</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="email">Adresse e‑mail</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="field">
+                <label for="address">Ville / Pays</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+
+            <div class="field">
+                <label for="profession">Profession / Statut</label>
+                <input type="text" id="profession" name="profession" required>
+            </div>
+
+            <div class="cv-actions">
+                <button type="submit" class="btn-main">
+                    <i class="bi bi-unlock"></i>
+                    Débloquer l’accès au CV
+                </button>
+            </div>
+        </form>
+
+        <div id="cv-links" class="cv-links" hidden>
+            <p class="cv-success">
+                <i class="bi bi-check-circle-fill"></i>
+                Merci ! Vous pouvez maintenant consulter, télécharger ou imprimer mon CV.
+            </p>
+
+            <div class="cv-links-buttons">
+                <button type="button" class="btn-outline" onclick="viewMyCV()">
+                    <i class="bi bi-window-sidebar"></i>
+                    Ouvrir le CV dans un nouvel onglet
+                </button>
+                <a href="{{ asset('cv/cv_Khadim_Diagne.html') }}" class="btn-main" download>
+                    <i class="bi bi-download"></i>
+                    Télécharger le CV
+                </a>
+                <button type="button" class="btn-ghost-small" onclick="printCV()">
+                    <i class="bi bi-printer"></i>
+                    Imprimer
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
 
 {% block page_styles %}
 <style>
@@ -194,6 +188,11 @@ Ce site présente mon parcours, mes réalisations et mes compétences en réseau
         display: flex;
         flex-direction: column;
         gap: 1.6rem;
+    }
+
+    .cv-section {
+        max-width: 1120px;
+        margin: 2rem auto 0;
     }
 
     .profile-card {
@@ -272,24 +271,28 @@ Ce site présente mon parcours, mes réalisations et mes compétences en réseau
     }
 
     .profile-highlight {
-        position: relative;
-        z-index: 1;
-        margin-top: 0.8rem;
-        padding: 0.7rem 0.9rem;
-        border-radius: 0.9rem;
-        background: rgba(15, 23, 42, 0.98);
-        border: 1px solid rgba(148, 163, 184, 0.45);
-        font-size: 0.84rem;
+    position: relative;
+    z-index: 1;
+    margin-top: 0.8rem;
+    padding: 0.7rem 0.9rem;
+    border-radius: 0.9rem;
+    background: rgba(15, 23, 42, 0.98);
+    border: 1px solid rgba(184, 167, 148, 0.45);
+    font-size: 0.90rem;
+    color: #c18153ff; /* couleur du texte ici */
+
     }
 
     .profile-meta {
-        position: relative;
-        z-index: 1;
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0.7rem;
-        margin: 1rem 0 1.1rem;
-        font-size: 0.78rem;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.7rem;
+    margin: 1rem 0 1.1rem;
+    font-size: 0.78rem;
+    color: #e5e7eb; /* couleur du texte */
+
     }
 
     .meta-item {
@@ -307,14 +310,6 @@ Ce site présente mon parcours, mes réalisations et mes compétences en réseau
 
     .meta-value {
         font-weight: 500;
-    }
-
-    .profile-actions {
-        position: relative;
-        z-index: 1;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.7rem;
     }
 
     .btn-main,
@@ -341,14 +336,14 @@ Ce site présente mon parcours, mes réalisations et mes compétences en réseau
     }
 
     .btn-main:hover {
-        transform: translateY(-1px);
+        transform: translateY(-3px);
         filter: brightness(1.03);
         box-shadow: 0 18px 40px rgba(249, 115, 22, 0.55);
     }
 
     .btn-outline {
         padding: 0.6rem 1.3rem;
-        border: 1px solid rgba(148, 163, 184, 0.7);
+        border: 1px solid rgba(239, 129, 4, 1);
         background: rgba(15, 23, 42, 0.96);
         color: var(--text-main);
         font-weight: 500;
@@ -526,98 +521,6 @@ Ce site présente mon parcours, mes réalisations et mes compétences en réseau
         color: var(--text-muted);
     }
 
-    .skills-list {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: grid;
-        gap: 0.4rem;
-    }
-
-    .skills-list li {
-        display: flex;
-        align-items: center;
-        gap: 0.45rem;
-        font-size: 0.86rem;
-    }
-
-    .skills-list i {
-        color: var(--accent);
-    }
-
-    /* Bannière portfolio PLEINE LARGEUR (en dehors de home-grid) */
-    .portfolio-banner {
-        margin-top: 2rem;
-    }
-
-    .portfolio-banner-inner {
-        max-width: 1120px;
-        margin: 0 auto;
-        position: relative;
-        z-index: 1;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 1.4rem;
-        padding: 1.6rem 1.8rem;
-        border-radius: 22px;
-        background:
-            radial-gradient(circle at 0 0, rgba(249,115,22,0.28), transparent 55%),
-            radial-gradient(circle at 100% 100%, rgba(56,189,248,0.25), transparent 60%),
-            linear-gradient(135deg, #020617, #020617);
-        border: 1px solid rgba(251, 146, 60, 0.7);
-        box-shadow: 0 24px 60px rgba(15, 23, 42, 0.95);
-    }
-
-    .portfolio-banner-text h2 {
-        margin: 0 0 0.4rem;
-        font-size: 1.25rem;
-    }
-
-    .portfolio-banner-text p {
-        margin: 0;
-        font-size: 0.95rem;
-        color: var(--text-muted);
-        max-width: 32rem;
-    }
-
-    .portfolio-kicker {
-        display: inline-block;
-        margin-bottom: 0.4rem;
-        font-size: 0.75rem;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: rgba(248, 250, 252, 0.8);
-    }
-
-    .btn-primary-xl {
-        border-radius: 999px;
-        padding: 0.8rem 1.8rem;
-        border: none;
-        background: linear-gradient(135deg, #f97316, #fb923c);
-        color: #0f172a;
-        font-size: 0.92rem;
-        font-weight: 600;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.55rem;
-        text-decoration: none;
-        box-shadow: 0 16px 40px rgba(249, 115, 22, 0.55);
-        cursor: pointer;
-        white-space: nowrap;
-        transition: transform 0.16s ease-out, box-shadow 0.16s ease-out, filter 0.16s ease-out;
-    }
-
-    .btn-primary-xl:hover {
-        transform: translateY(-1px);
-        filter: brightness(1.04);
-        box-shadow: 0 22px 55px rgba(249, 115, 22, 0.65);
-    }
-
-    .portfolio-btn {
-        white-space: nowrap;
-    }
-
     @keyframes spin {
         to { transform: rotate(360deg); }
     }
@@ -625,13 +528,6 @@ Ce site présente mon parcours, mes réalisations et mes compétences en réseau
     @media (max-width: 980px) {
         .home-grid {
             grid-template-columns: minmax(0, 1fr);
-        }
-    }
-
-    @media (max-width: 880px) {
-        .portfolio-banner-inner {
-            flex-direction: column;
-            align-items: flex-start;
         }
     }
 
@@ -650,6 +546,9 @@ Ce site présente mon parcours, mes réalisations et mes compétences en réseau
         const isOpen = panel.classList.contains('is-open');
         panel.classList.toggle('is-open', !isOpen);
         panel.setAttribute('aria-hidden', isOpen ? 'true' : 'false');
+        if (!isOpen) {
+            panel.scrollIntoView({ behavior: 'smooth' });
+        }
     }
 
     function handleCvForm(event) {
@@ -696,6 +595,4 @@ Ce site présente mon parcours, mes réalisations et mes compétences en réseau
         };
     }
 </script>
-{% endblock %}
-
 {% endblock %}

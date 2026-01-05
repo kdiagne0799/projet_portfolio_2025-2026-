@@ -8,75 +8,225 @@
 
     <div class="services-intro">
         <p>
-            Voici un aperçu des domaines sur lesquels je peux intervenir : réseaux, systèmes,
-            développement web et cybersécurité, avec une approche sérieuse et orientée résultats.
+            Cette page présente les principaux services que je suis en mesure de proposer dans le cadre de mon
+            BUT Réseaux & Télécommunications, avec un positionnement centré sur les systèmes, le développement
+            applicatif et la cybersécurité, dans une démarche structurée et orientée résultats.
         </p>
     </div>
 
     <div class="services-grid">
-        <!-- Service 1 : Administration Réseau -->
+        {# Service 1 : Administration de systèmes Linux (AC11.04) #}
         <article class="service-card">
-            <div class="service-icon">
-                <i class="bi bi-hdd-network"></i>
+            <div class="service-image-shell">
+                <img src="{{ asset('image/linux.png') }}" alt="Administration de systèmes Linux">
             </div>
-            <h3>Administration réseau & internet</h3>
-            <ul>
-                <li>Interventions sur équipements réseaux et télécoms.</li>
-                <li>Configuration LAN, VLAN, IP, switching et routage.</li>
-                <li>Administration Linux / Windows et optimisation réseau.</li>
-            </ul>
+            <div class="service-content">
+                <h3>Administration de systèmes Linux</h3>
+                <p class="service-ac">
+                    AC11.04 – Maîtriser les rôles et les principes fondamentaux des systèmes d’exploitation.
+                </p>
+                <p class="service-text">
+                    Gestion de serveurs Linux pour des usages réseaux : navigation dans le système de fichiers,
+                    gestion des droits administrateur, configuration réseau (adresse IP, Netplan) et installation
+                    d’outils de diagnostic pour valider la connectivité.
+                </p>
+                <div class="service-tags">
+                    <span>Linux</span>
+                    <span>Services réseau</span>
+                    <span>Supervision</span>
+                </div>
+
+                <button type="button" class="service-btn" data-target="detail-linux">
+                    Voir le détail
+                </button>
+
+                <div id="detail-linux" class="service-detail">
+                    <p>
+                        Mise en place et administration d’une machine virtuelle Ubuntu utilisée comme poste de test
+                        réseau : configuration IP statique avec Netplan, utilisation du terminal et de commandes
+                        d’administration (sudo, apt, ping). Résolution de problèmes de connectivité liés au mode réseau
+                        de la VM (NAT vs accès par pont) et validation de l’interopérabilité entre Linux, Windows et
+                        équipements Cisco.
+                    </p>
+                </div>
+            </div>
         </article>
 
-        <!-- Service 2 : Connectivité & ToIP -->
+        {# Service 2 : Fondamentaux systèmes & électricité (AC11.01) #}
         <article class="service-card">
-            <div class="service-icon">
-                <i class="bi bi-telephone-forward"></i>
+            <div class="service-image-shell">
+                <img src="{{ asset('image/system-basics.png') }}" alt="Fondamentaux des systèmes et de l’électricité">
             </div>
-            <h3>Connectivité & ToIP</h3>
-            <ul>
-                <li>Déploiement câblage, fibre, Wi-Fi et VoIP.</li>
-                <li>Optimisation de la qualité des appels et de la bande passante.</li>
-                <li>Accompagnement des utilisateurs sur les outils de communication.</li>
-            </ul>
+            <div class="service-content">
+                <h3>Fondamentaux systèmes & électricité</h3>
+                <p class="service-ac">
+                    AC11.01 – Maîtriser les lois fondamentales de l’électricité pour intervenir sur des équipements
+                    de réseaux et télécommunications.
+                </p>
+                <p class="service-text">
+                    Compréhension du fonctionnement matériel, du câblage et des alimentations pour assurer
+                    la fiabilité des infrastructures réseaux et télécoms.
+                </p>
+                <div class="service-tags">
+                    <span>Électricité</span>
+                    <span>Matériel</span>
+                    <span>Dépannage</span>
+                </div>
+
+                <button type="button" class="service-btn" data-target="detail-system">
+                    Voir le détail
+                </button>
+
+                <div id="detail-system" class="service-detail">
+                    <p>
+                        Compréhension du fonctionnement matériel, du câblage et des alimentations : mesures de tension,
+                        courant et puissance, lecture des schémas et réglage d’instruments (GBF, oscilloscope,
+                        multimètre) pour fiabiliser une installation réseau ou télécom.
+                    </p>
+                </div>
+            </div>
         </article>
 
-        <!-- Service 3 : Développement Informatique -->
+        {# Service 3 : Scripts Python pour les R&T (AC13.02 / AC13.03) #}
         <article class="service-card">
-            <div class="service-icon">
-                <i class="bi bi-code-slash"></i>
+            <div class="service-image-shell">
+                <img src="{{ asset('image/python-tools.png') }}" alt="Scripts Python pour les réseaux et télécoms">
             </div>
-            <h3>Développement informatique & web</h3>
-            <ul>
-                <li>Création de sites et applications (HTML, CSS, PHP, Symfony).</li>
-                <li>Gestion de bases de données et intégration Git/GitHub.</li>
-                <li>Automatisation de tâches réseau et systèmes.</li>
-            </ul>
+            <div class="service-content">
+                <h3>Scripts Python pour les R&T</h3>
+                <p class="service-ac">
+                    AC13.02 / AC13.03 – Lire, corriger un programme et traduire un algorithme.
+                </p>
+                <p class="service-text">
+                    Création et modification de programmes pour transformer un besoin en solution logicielle :
+                    utilisation des structures de contrôle, des boucles et de fonctions pour automatiser des
+                    traitements, analyser des données et fiabiliser les calculs.
+                </p>
+                <div class="service-tags">
+                    <span>Python</span>
+                    <span>Automatisation</span>
+                    <span>Sécurité</span>
+                </div>
+
+                <button type="button" class="service-btn" data-target="detail-python">
+                    Voir le détail
+                </button>
+
+                <div id="detail-python" class="service-detail">
+                    <p>
+                        Mise en œuvre d’algorithmes en Python (et C) pour des calculs, petits jeux ou traitements de
+                        données : utilisation de conditions, boucles et fonctions réutilisables. Tests systématiques
+                        avec cas simples et cas limites, débogage pas à pas et amélioration de la robustesse (gestion
+                        des entrées, messages d’erreur, contrôle des bornes).
+                    </p>
+                </div>
+            </div>
         </article>
 
-        <!-- Service 4 : Sécurité & Cybersécurité -->
+        {# Service 4 : Applications Web pour les R&T (AC13.04) #}
         <article class="service-card">
-            <div class="service-icon">
-                <i class="bi bi-shield-lock"></i>
+            <div class="service-image-shell">
+                <img src="{{ asset('image/web-app.png') }}" alt="Applications Web pour les réseaux et télécommunications">
             </div>
-            <h3>Sécurité & cybersécurité</h3>
-            <ul>
-                <li>Configuration sécurisée des équipements et serveurs.</li>
-                <li>Firewall, ACL, chiffrement, premiers tests de sécurité.</li>
-                <li>Sensibilisation et bonnes pratiques pour les utilisateurs.</li>
-            </ul>
+            <div class="service-content">
+                <h3>Applications Web pour les R&T</h3>
+                <p class="service-ac">
+                    AC13.04 – Connaître l’architecture et les technologies d’un site Web.
+                </p>
+                <p class="service-text">
+                    Développement d’applications web avec Symfony : interfaces responsives, structure claire,
+                    intégration de bonnes pratiques de sécurité et de documentation.
+                </p>
+                <div class="service-tags">
+                    <span>Symfony</span>
+                    <span>Front &amp; Back</span>
+                    <span>Web sécurisé</span>
+                </div>
+
+                <button type="button" class="service-btn" data-target="detail-web">
+                    Voir le détail
+                </button>
+
+                <div id="detail-web" class="service-detail">
+                    <p>
+                        Mise en œuvre d’un site web structuré avec Symfony : maîtrise des bases HTML/CSS,
+                        compréhension de l’architecture MVC, utilisation de Twig et des routes, et organisation
+                        rigoureuse des fichiers (contrôleurs, vues, ressources) pour garantir un projet lisible,
+                        maintenable et responsive.
+                    </p>
+                </div>
+            </div>
         </article>
 
-        <!-- Service 5 : Virtualisation & Systèmes -->
+        {# Service 5 : Configuration de réseaux locaux (AC11.03) #}
         <article class="service-card">
-            <div class="service-icon">
-                <i class="bi bi-cloud"></i>
+            <div class="service-image-shell">
+                <img src="{{ asset('image/lan-config.png') }}" alt="Configuration de réseaux locaux">
             </div>
-            <h3>Virtualisation & administration système</h3>
-            <ul>
-                <li>Création et gestion de machines virtuelles.</li>
-                <li>Configuration réseaux virtuels : NAT, bridge, host-only.</li>
-                <li>Maintenance d’environnements virtuels et physiques.</li>
-            </ul>
+            <div class="service-content">
+                <h3>Configuration de réseaux locaux</h3>
+                <p class="service-ac">
+                    AC11.03 – Configurer les fonctions de base du réseau local.
+                </p>
+                <p class="service-text">
+                    Mise en service de switchs Cisco à partir d’une configuration vierge : création de VLAN,
+                    configuration des ports en mode access ou trunk, adressage des interfaces VLAN et utilisation
+                    d’un serveur TFTP pour charger ou sauvegarder les configurations.
+                </p>
+                <div class="service-tags">
+                    <span>VLAN</span>
+                    <span>Switch Cisco</span>
+                    <span>TFTP</span>
+                </div>
+
+                <button type="button" class="service-btn" data-target="detail-lanconfig">
+                    Voir le détail
+                </button>
+
+                <div id="detail-lanconfig" class="service-detail">
+                    <p>
+                        Connexion en console aux switchs via PuTTY, configuration des VLAN et des ports (access / trunk),
+                        récupération d’une configuration via TFTP puis vérification de la connectivité avec les
+                        commandes show et ping. Résolution d’un problème de communication entre deux switchs en
+                        corrigeant la configuration du lien trunk sur les deux équipements.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        {# Service 6 : Travail collaboratif en développement (AC13.06) #}
+        <article class="service-card">
+            <div class="service-image-shell">
+                <img src="{{ asset('image/dev-team.png') }}" alt="Travail collaboratif en développement">
+            </div>
+            <div class="service-content">
+                <h3>Travail collaboratif en développement</h3>
+                <p class="service-ac">
+                    AC13.06 – S’intégrer dans un environnement propice au développement et au travail collaboratif.
+                </p>
+                <p class="service-text">
+                    Mise en place d’un environnement de développement versionné avec Git et GitHub : suivi de l’évolution
+                    du code, sauvegarde distante et organisation du projet e‑portfolio comme dans un contexte professionnel.
+                </p>
+                <div class="service-tags">
+                    <span>Git &amp; GitHub</span>
+                    <span>Versionning</span>
+                    <span>Projet d’équipe</span>
+                </div>
+
+                <button type="button" class="service-btn" data-target="detail-devteam">
+                    Voir le détail
+                </button>
+
+                <div id="detail-devteam" class="service-detail">
+                    <p>
+                        Création d’un dépôt local et distant pour le site e‑portfolio, validation régulière des
+                        modifications avec des messages de commit explicites, synchronisation entre postes via GitHub
+                        et préparation à un travail en équipe (structure de projet claire, bonnes pratiques de partage
+                        et de documentation).
+                    </p>
+                </div>
+            </div>
         </article>
     </div>
 
@@ -129,39 +279,49 @@
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 1.4rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.6rem;
 }
 
 .service-card {
-    background: rgba(15, 23, 42, 0.96);
-    border-radius: 18px;
-    border: 1px solid rgba(148, 163, 184, 0.4);
-    padding: 1.3rem 1.2rem;
-    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
-    transition: transform 0.18s ease-out, box-shadow 0.18s ease-out, border-color 0.18s ease-out;
+    background: rgba(15, 23, 42, 0.97);
+    border-radius: 20px;
+    border: 1px solid rgba(148, 163, 184, 0.45);
+    box-shadow: 0 22px 55px rgba(15, 23, 42, 0.95);
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    transition: transform 0.18s ease-out, box-shadow 0.18s ease-out, border-color 0.18s ease-out;
 }
 
 .service-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 22px 50px rgba(15, 23, 42, 0.95);
-    border-color: rgba(249, 115, 22, 0.7);
+    transform: translateY(-6px);
+    box-shadow: 0 26px 65px rgba(15, 23, 42, 0.98);
+    border-color: rgba(249, 115, 22, 0.8);
 }
 
-.service-icon {
-    width: 38px;
-    height: 38px;
-    border-radius: 999px;
-    display: inline-flex;
+.service-image-shell {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: radial-gradient(circle at 0 0, rgba(249,115,22,0.18), transparent 55%),
+                radial-gradient(circle at 100% 100%, rgba(56,189,248,0.18), transparent 55%);
+    display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(249, 115, 22, 0.12);
-    color: var(--accent);
-    font-size: 1.2rem;
-    margin-bottom: 0.3rem;
+    overflow: hidden;
+}
+
+.service-image-shell img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-content {
+    padding: 1.1rem 1.2rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
 }
 
 .service-card h3 {
@@ -170,26 +330,66 @@
     color: var(--text-main);
 }
 
-.service-card ul {
-    list-style: none;
-    padding-left: 0;
-    margin: 0.2rem 0 0;
+.service-ac {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--accent);
+}
+
+.service-text {
+    margin: 0.2rem 0 0.3rem;
     font-size: 0.9rem;
     color: var(--text-muted);
 }
 
-.service-card li {
-    position: relative;
-    padding-left: 1.1rem;
-    margin-bottom: 0.25rem;
+.service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.2rem;
 }
 
-.service-card li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: var(--accent);
+.service-tags span {
+    font-size: 0.78rem;
+    padding: 0.16rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    color: var(--text-muted);
+    background: rgba(15, 23, 42, 0.96);
+}
+
+.service-btn {
+    margin-top: 0.7rem;
+    align-self: flex-start;
+    padding: 0.45rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.7);
+    background: transparent;
+    color: var(--text-main);
+    font-size: 0.82rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: background 0.16s ease-out, color 0.16s ease-out, border-color 0.16s ease-out, transform 0.16s ease-out;
+}
+
+.service-btn:hover {
+    background: linear-gradient(135deg, #f97316, #fb923c);
+    color: #0f172a;
+    border-color: transparent;
+    transform: translateY(-1px);
+}
+
+.service-detail {
+    display: none;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px dashed rgba(148, 163, 184, 0.6);
+    font-size: 0.86rem;
+    color: var(--text-muted);
 }
 
 .services-footer {
@@ -207,3 +407,24 @@
     }
 }
 {% endblock %}
+
+{% block javascripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const buttons = document.querySelectorAll('.service-btn');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetId = button.getAttribute('data-target');
+                const detail = document.getElementById(targetId);
+                if (!detail) return;
+
+                const isVisible = detail.style.display === 'block';
+                detail.style.display = isVisible ? 'none' : 'block';
+                button.textContent = isVisible ? 'Voir le détail' : 'Masquer le détail';
+            });
+        });
+    });
+</script>
+{% endblock %}
+
