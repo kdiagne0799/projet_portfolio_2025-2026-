@@ -3,232 +3,1384 @@
 {% block title %}Services – Khadim Diagne{% endblock %}
 
 {% block body %}
-<section id="services-section" class="services-section">
-    <h2 class="section-title services-title">Mes services & compétences</h2>
+
+<section class="services-section competence-block" id="rt2">
+    <div class="competence-header">
+        <h2 class="competence-title">RT1.2 – Administrer les Réseaux et l’Internet</h2>
+        <div class="competence-underline"></div>
+    </div>
+
+
 
     <div class="services-intro">
         <p>
-            Cette page présente les principaux services que je suis en mesure de proposer dans le cadre de mon
-            BUT Réseaux & Télécommunications, avec un positionnement centré sur les systèmes, le développement
-            applicatif et la cybersécurité, dans une démarche structurée et orientée résultats.
+            Cette compétence présente les premiers apprentissages développés dans le cadre du BUT Réseaux & Télécommunications.
+            Elle met en avant ma capacité à configurer un réseau local, manipuler des équipements Cisco et vérifier le bon
+            fonctionnement d’une infrastructure simple dans un contexte de travaux pratiques.
         </p>
     </div>
 
     <div class="services-grid">
-        {# Service 1 : Administration de systèmes Linux (AC11.04) #}
         <article class="service-card">
             <div class="service-image-shell">
-                <img src="{{ asset('image/linux.png') }}" alt="Administration de systèmes Linux">
+                <img src="{{ asset('image/rt1-administrer-main.png') }}" alt="Administrer les Réseaux et l’Internet">
             </div>
+
             <div class="service-content">
-                <h3>Administration de systèmes Linux</h3>
+                <h3>AC11.03 – Configurer les fonctions de base du réseau local</h3>
+
                 <p class="service-ac">
-                    AC11.04 – Maîtriser les rôles et les principes fondamentaux des systèmes d’exploitation.
+                    Apprentissage critique de la compétence RT1.2 – Administrer les Réseaux et l’Internet.
                 </p>
+
                 <p class="service-text">
-                    Gestion de serveurs Linux pour des usages réseaux : navigation dans le système de fichiers,
-                    gestion des droits administrateur, configuration réseau (adresse IP, Netplan) et installation
-                    d’outils de diagnostic pour valider la connectivité.
+                    Lors d’un TP en équipe, j’ai configuré un réseau local sur des switchs Cisco vierges en utilisant
+                    la connexion console, PuTTY, les VLANs, les ports access / trunk et les commandes de vérification.
                 </p>
-                <div class="service-tags">
-                    <span>Linux</span>
-                    <span>Services réseau</span>
-                    <span>Supervision</span>
-                </div>
 
-                <button type="button" class="service-btn" data-target="detail-linux">
-                    Voir le détail
-                </button>
-
-                <div id="detail-linux" class="service-detail">
-                    <p>
-                        Mise en place et administration d’une machine virtuelle Ubuntu utilisée comme poste de test
-                        réseau : configuration IP statique avec Netplan, utilisation du terminal et de commandes
-                        d’administration (sudo, apt, ping). Résolution de problèmes de connectivité liés au mode réseau
-                        de la VM (NAT vs accès par pont) et validation de l’interopérabilité entre Linux, Windows et
-                        équipements Cisco.
-                    </p>
-                </div>
-            </div>
-        </article>
-
-        {# Service 2 : Fondamentaux systèmes & électricité (AC11.01) #}
-        <article class="service-card">
-            <div class="service-image-shell">
-                <img src="{{ asset('image/system-basics.png') }}" alt="Fondamentaux des systèmes et de l’électricité">
-            </div>
-            <div class="service-content">
-                <h3>Fondamentaux systèmes & électricité</h3>
-                <p class="service-ac">
-                    AC11.01 – Maîtriser les lois fondamentales de l’électricité pour intervenir sur des équipements
-                    de réseaux et télécommunications.
-                </p>
-                <p class="service-text">
-                    Compréhension du fonctionnement matériel, du câblage et des alimentations pour assurer
-                    la fiabilité des infrastructures réseaux et télécoms.
-                </p>
-                <div class="service-tags">
-                    <span>Électricité</span>
-                    <span>Matériel</span>
-                    <span>Dépannage</span>
-                </div>
-
-                <button type="button" class="service-btn" data-target="detail-system">
-                    Voir le détail
-                </button>
-
-                <div id="detail-system" class="service-detail">
-                    <p>
-                        Compréhension du fonctionnement matériel, du câblage et des alimentations : mesures de tension,
-                        courant et puissance, lecture des schémas et réglage d’instruments (GBF, oscilloscope,
-                        multimètre) pour fiabiliser une installation réseau ou télécom.
-                    </p>
-                </div>
-            </div>
-        </article>
-
-        {# Service 3 : Scripts Python pour les R&T (AC13.02 / AC13.03) #}
-        <article class="service-card">
-            <div class="service-image-shell">
-                <img src="{{ asset('image/python-tools.png') }}" alt="Scripts Python pour les réseaux et télécoms">
-            </div>
-            <div class="service-content">
-                <h3>Scripts Python pour les R&T</h3>
-                <p class="service-ac">
-                    AC13.02 / AC13.03 – Lire, corriger un programme et traduire un algorithme.
-                </p>
-                <p class="service-text">
-                    Création et modification de programmes pour transformer un besoin en solution logicielle :
-                    utilisation des structures de contrôle, des boucles et de fonctions pour automatiser des
-                    traitements, analyser des données et fiabiliser les calculs.
-                </p>
-                <div class="service-tags">
-                    <span>Python</span>
-                    <span>Automatisation</span>
-                    <span>Sécurité</span>
-                </div>
-
-                <button type="button" class="service-btn" data-target="detail-python">
-                    Voir le détail
-                </button>
-
-                <div id="detail-python" class="service-detail">
-                    <p>
-                        Mise en œuvre d’algorithmes en Python (et C) pour des calculs, petits jeux ou traitements de
-                        données : utilisation de conditions, boucles et fonctions réutilisables. Tests systématiques
-                        avec cas simples et cas limites, débogage pas à pas et amélioration de la robustesse (gestion
-                        des entrées, messages d’erreur, contrôle des bornes).
-                    </p>
-                </div>
-            </div>
-        </article>
-
-        {# Service 4 : Applications Web pour les R&T (AC13.04) #}
-        <article class="service-card">
-            <div class="service-image-shell">
-                <img src="{{ asset('image/web-app.png') }}" alt="Applications Web pour les réseaux et télécommunications">
-            </div>
-            <div class="service-content">
-                <h3>Applications Web pour les R&T</h3>
-                <p class="service-ac">
-                    AC13.04 – Connaître l’architecture et les technologies d’un site Web.
-                </p>
-                <p class="service-text">
-                    Développement d’applications web avec Symfony : interfaces responsives, structure claire,
-                    intégration de bonnes pratiques de sécurité et de documentation.
-                </p>
-                <div class="service-tags">
-                    <span>Symfony</span>
-                    <span>Front &amp; Back</span>
-                    <span>Web sécurisé</span>
-                </div>
-
-                <button type="button" class="service-btn" data-target="detail-web">
-                    Voir le détail
-                </button>
-
-                <div id="detail-web" class="service-detail">
-                    <p>
-                        Mise en œuvre d’un site web structuré avec Symfony : maîtrise des bases HTML/CSS,
-                        compréhension de l’architecture MVC, utilisation de Twig et des routes, et organisation
-                        rigoureuse des fichiers (contrôleurs, vues, ressources) pour garantir un projet lisible,
-                        maintenable et responsive.
-                    </p>
-                </div>
-            </div>
-        </article>
-
-        {# Service 5 : Configuration de réseaux locaux (AC11.03) #}
-        <article class="service-card">
-            <div class="service-image-shell">
-                <img src="{{ asset('image/lan-config.png') }}" alt="Configuration de réseaux locaux">
-            </div>
-            <div class="service-content">
-                <h3>Configuration de réseaux locaux</h3>
-                <p class="service-ac">
-                    AC11.03 – Configurer les fonctions de base du réseau local.
-                </p>
-                <p class="service-text">
-                    Mise en service de switchs Cisco à partir d’une configuration vierge : création de VLAN,
-                    configuration des ports en mode access ou trunk, adressage des interfaces VLAN et utilisation
-                    d’un serveur TFTP pour charger ou sauvegarder les configurations.
-                </p>
                 <div class="service-tags">
                     <span>VLAN</span>
                     <span>Switch Cisco</span>
-                    <span>TFTP</span>
+                    <span>Console</span>
+                    <span>Connectivité</span>
                 </div>
 
-                <button type="button" class="service-btn" data-target="detail-lanconfig">
+                <button type="button" class="service-btn" data-target="detail-admin">
                     Voir le détail
                 </button>
 
-                <div id="detail-lanconfig" class="service-detail">
+                <div id="detail-admin" class="service-detail">
+                    <h4>Présentation</h4>
                     <p>
-                        Connexion en console aux switchs via PuTTY, configuration des VLAN et des ports (access / trunk),
-                        récupération d’une configuration via TFTP puis vérification de la connectivité avec les
-                        commandes show et ping. Résolution d’un problème de communication entre deux switchs en
-                        corrigeant la configuration du lien trunk sur les deux équipements.
+                        Ce travail a été réalisé dans le cadre de la ressource R1.03 – Initiation aux réseaux,
+                        sur du matériel réel en salle de TP. L’objectif était de mettre en pratique les bases
+                        de la configuration d’un réseau local à partir d’équipements Cisco sans configuration préalable.
                     </p>
-                </div>
-            </div>
-        </article>
 
-        {# Service 6 : Travail collaboratif en développement (AC13.06) #}
-        <article class="service-card">
-            <div class="service-image-shell">
-                <img src="{{ asset('image/dev-team.png') }}" alt="Travail collaboratif en développement">
-            </div>
-            <div class="service-content">
-                <h3>Travail collaboratif en développement</h3>
-                <p class="service-ac">
-                    AC13.06 – S’intégrer dans un environnement propice au développement et au travail collaboratif.
-                </p>
-                <p class="service-text">
-                    Mise en place d’un environnement de développement versionné avec Git et GitHub : suivi de l’évolution
-                    du code, sauvegarde distante et organisation du projet e‑portfolio comme dans un contexte professionnel.
-                </p>
-                <div class="service-tags">
-                    <span>Git &amp; GitHub</span>
-                    <span>Versionning</span>
-                    <span>Projet d’équipe</span>
-                </div>
-
-                <button type="button" class="service-btn" data-target="detail-devteam">
-                    Voir le détail
-                </button>
-
-                <div id="detail-devteam" class="service-detail">
+                    <h4>Ce que j’ai réalisé</h4>
                     <p>
-                        Création d’un dépôt local et distant pour le site e‑portfolio, validation régulière des
-                        modifications avec des messages de commit explicites, synchronisation entre postes via GitHub
-                        et préparation à un travail en équipe (structure de projet claire, bonnes pratiques de partage
-                        et de documentation).
+                        J’ai relié le PC au switch avec un câble console, configuré la connexion série dans PuTTY,
+                        créé plusieurs VLANs, affecté les ports en mode access, configuré le lien entre les switchs
+                        en trunk puis vérifié la connectivité à l’aide des commandes Cisco et des tests de ping.
                     </p>
+
+                    <h4>Ce que j’ai appris</h4>
+                    <p>
+                        Cette activité m’a permis de mieux comprendre le rôle des VLANs dans la segmentation d’un réseau,
+                        la différence entre un port access et un port trunk, ainsi que l’importance d’une vérification
+                        progressive pour diagnostiquer un problème de communication entre équipements.
+                    </p>
+
+                    <h4>Compétences développées</h4>
+                    <ul class="service-list">
+                        <li>Configurer un switch Cisco à partir d’une connexion console.</li>
+                        <li>Créer et nommer des VLANs.</li>
+                        <li>Affecter des ports à un VLAN en mode access.</li>
+                        <li>Configurer un lien trunk entre deux switchs.</li>
+                        <li>Vérifier le bon fonctionnement d’un réseau local avec les commandes Cisco.</li>
+                    </ul>
+
+                    <h4>Problème rencontré</h4>
+                    <p>
+                        Lors des tests, deux postes d’un même VLAN mais connectés sur deux switchs différents ne communiquaient pas.
+                        J’ai identifié que le lien entre les switchs n’était pas correctement configuré en trunk. Après correction,
+                        la communication a été rétablie et les tests de connectivité ont fonctionné.
+                    </p>
+
+                    <div class="service-proof">
+                        <p><strong>Preuves à ajouter :</strong></p>
+                        <ul class="service-list">
+                            <li>Schéma de la topologie réseau.</li>
+                            <li>Capture de la connexion console sur le switch.</li>
+                            <li>Capture de la configuration VLAN / trunk.</li>
+                            <li>Capture d’un test de connectivité réussi.</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-images">
+                        <figure>
+                            <img src="{{ asset('image/ac1103-topologie-reseau.png') }}" alt="Topologie du réseau local">
+                            <figcaption>Topologie du réseau local utilisé pendant le TP.</figcaption>
+                        </figure>
+
+                        <figure>
+                            <img src="{{ asset('image/ac1103-console-switch.png') }}" alt="Connexion console sur switch Cisco">
+                            <figcaption>Connexion console au switch Cisco via PuTTY.</figcaption>
+                        </figure>
+
+                        <figure>
+                            <img src="{{ asset('image/ac1103-vlan-trunk.png') }}" alt="Configuration VLAN et trunk">
+                            <figcaption>Configuration des VLANs et du lien trunk entre les switchs.</figcaption>
+                        </figure>
+
+                        <figure>
+                            <img src="{{ asset('image/ac1103-test-connectivite.png') }}" alt="Test de connectivité réussi">
+                            <figcaption>Validation de la connectivité réseau après configuration.</figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="service-summary">
+                        <h4>Synthèse de la compétence</h4>
+                        <p>
+                            Cet apprentissage m’a permis de passer de la théorie à la pratique en configurant un réseau local
+                            sur des équipements réels. J’y ai développé de la rigueur, une méthode de vérification progressive
+                            et une meilleure compréhension du fonctionnement concret d’un switch Cisco dans un environnement réseau.
+                        </p>
+                    </div>
                 </div>
             </div>
         </article>
     </div>
+
+
+<article class="service-card">
+    <div class="service-image-shell">
+        <img src="{{ asset('image/linux-pp.png') }}" alt="Administration de systèmes Linux">
+    </div>
+
+    <div class="service-content">
+        <h3>AC11.04 – Maîtriser les rôles et les principes fondamentaux des systèmes d’exploitation</h3>
+
+        <p class="service-ac">
+            Interagir avec un système Linux pour configurer et administrer les réseaux et services fournis.
+        </p>
+
+        <p class="service-text">
+            Travail sur une machine virtuelle Ubuntu pour configurer le système, interagir en ligne de commande,
+            tester la connectivité réseau et comprendre le rôle du système d’exploitation dans l’administration
+            des services et des réseaux.
+        </p>
+
+        <div class="service-tags">
+            <span>Ubuntu</span>
+            <span>Linux</span>
+            <span>Terminal</span>
+            <span>VirtualBox</span>
+            <span>Connectivité</span>
+        </div>
+
+        <button type="button" class="service-btn" data-target="detail-linux-admin">
+            Voir le détail
+        </button>
+
+        <div id="detail-linux-admin" class="service-detail">
+            <h4>Présentation</h4>
+            <p>
+                Dans le cadre de la SAÉ 1.02, j’ai utilisé une machine virtuelle Ubuntu comme environnement de test
+                pour apprendre à interagir avec un système d’exploitation dans un contexte réseau. L’objectif était
+                de configurer la machine, lui attribuer une adresse IP correcte et vérifier sa communication avec
+                d’autres équipements du réseau.
+            </p>
+
+            <h4>Ce que j’ai réalisé</h4>
+            <p>
+                J’ai travaillé dans le terminal Linux pour naviguer dans le système de fichiers, utiliser les droits
+                administrateur et modifier la configuration réseau. J’ai également utilisé Netplan pour définir une
+                adresse IP statique, installé des outils utiles avec le gestionnaire de paquets et testé la connectivité
+                entre la machine virtuelle Ubuntu, une machine physique Windows et l’environnement de TP.
+            </p>
+
+            <h4>Ce que j’ai appris</h4>
+            <p>
+                Cette activité m’a permis de mieux comprendre le rôle d’un système d’exploitation dans un réseau, la
+                structure des répertoires Linux, l’importance des permissions et l’intérêt d’une configuration réseau
+                propre. J’ai aussi appris à identifier un problème de communication lié au mode réseau de VirtualBox
+                et à corriger ce défaut en passant d’un mode NAT à un accès par pont.
+            </p>
+
+            <h4>Compétences développées</h4>
+            <ul class="service-list">
+                <li>Naviguer dans le système de fichiers Linux.</li>
+                <li>Utiliser le terminal pour administrer une machine virtuelle Ubuntu.</li>
+                <li>Manipuler les droits avec sudo et les commandes d’administration.</li>
+                <li>Configurer une adresse IP statique avec Netplan.</li>
+                <li>Installer des paquets logiciels avec apt.</li>
+                <li>Vérifier la connectivité entre Ubuntu, Windows et d’autres équipements réseau.</li>
+                <li>Diagnostiquer un problème de communication lié à la virtualisation.</li>
+            </ul>
+
+            <h4>Problème rencontré</h4>
+            <p>
+                Les échanges entre la machine virtuelle Ubuntu et la machine Windows ne fonctionnaient pas au départ.
+                Après analyse, j’ai identifié que la carte réseau de la VM était configurée en mode NAT dans VirtualBox,
+                ce qui empêchait la communication directe avec la machine physique. Le passage en mode “Accès par pont”
+                a permis de corriger le problème et de rétablir la connectivité.
+            </p>
+
+            <div class="service-proof">
+                <p><strong>Preuves à ajouter :</strong></p>
+                <ul class="service-list">
+                    <li>Capture du fichier de partage.</li>
+                    <li>Capture de l’extension du fichier utilisé.</li>
+                    <li>Capture de GameShell terminé.</li>
+                    <li>Capture de la création de la machine virtuelle.</li>
+                    <li>Historique du terminal côté serveur.</li>
+                    <li>Historique du terminal côté client.</li>
+                    <li>Capture de l’installation de Python.</li>
+                    <li>Capture du test de connectivité Ubuntu.</li>
+                    <li>Capture de la machine physique Windows.</li>
+                </ul>
+            </div>
+
+            <div class="service-images">
+                <figure>
+                    <img src="{{ asset('image/ac1104-fichier-partage.png') }}" alt="Fichier de partage">
+                    <figcaption>Fichier de partage utilisé dans l’environnement de travail.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="{{ asset('image/ac1104-extension-fichier.png') }}" alt="Extension du fichier">
+                    <figcaption>Vérification de l’extension du fichier manipulé.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="{{ asset('image/ac1104-gameshell-termine.png') }}" alt="GameShell terminé">
+                    <figcaption>Validation d’un exercice réalisé dans GameShell.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="{{ asset('image/ac1104-creation-vm.png') }}" alt="Création de machine virtuelle">
+                    <figcaption>Création de la machine virtuelle Ubuntu.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="{{ asset('image/ac1104-historique-terminal-serveur.png') }}" alt="Historique terminal côté serveur">
+                    <figcaption>Commandes et échanges observés dans le terminal côté serveur.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="{{ asset('image/ac1104-historique-terminal-client.png') }}" alt="Historique terminal côté client">
+                    <figcaption>Commandes et échanges observés dans le terminal côté client.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="{{ asset('image/ac1104-installation-python.png') }}" alt="Installation de Python">
+                    <figcaption>Installation de Python dans l’environnement Linux.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="{{ asset('image/ac1104-test-connectivite-ubuntu.png') }}" alt="Test de connectivité Ubuntu">
+                    <figcaption>Test de connectivité entre Ubuntu et le réseau.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="{{ asset('image/ac1104-pc-windows-physique.png') }}" alt="Machine physique Windows">
+                    <figcaption>Machine physique Windows utilisée pour les tests d’interopérabilité.</figcaption>
+                </figure>
+            </div>
+
+            <div class="service-summary">
+                <h4>Synthèse de l’apprentissage</h4>
+                <p>
+                    Cet apprentissage m’a permis de comprendre que l’administration réseau ne se limite pas aux équipements
+                    Cisco, mais repose aussi sur la maîtrise du système d’exploitation utilisé comme poste de test ou
+                    comme serveur. J’y ai développé de la rigueur, de l’autonomie en ligne de commande et une meilleure
+                    capacité à diagnostiquer les problèmes de connectivité dans un environnement virtualisé.
+                </p>
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<article class="service-card">
+    <div class="service-image-shell">
+        <img src="{{ asset('image/arc.png') }}" alt="Schéma de l’architecture réseau de l’entreprise">
+    </div>
+
+    <div class="service-content">
+        <h3>AC11.02 – Comprendre l’architecture et les fondements des systèmes numériques</h3>
+
+        <p class="service-ac">
+            Principes du codage de l’information, des communications et de l’Internet.
+        </p>
+
+        <p class="service-text">
+            Cette activité m’a permis d’analyser l’architecture logique d’un réseau d’entreprise, de construire un plan
+            d’adressage cohérent et de comparer les protocoles de communication sécurisés et non sécurisés.
+        </p>
+
+        <div class="service-tags">
+            <span>OSI</span>
+            <span>Wireshark</span>
+            <span>VLAN</span>
+            <span>SSH</span>
+            <span>Adressage IP</span>
+        </div>
+
+        <button type="button" class="service-btn" data-target="detail-ac1102">
+            Voir le détail
+        </button>
+
+        <div id="detail-ac1102" class="service-detail">
+            <h4>Présentation</h4>
+            <p>
+                Dans le cadre de la SAÉ 1.02, j’ai dû réfléchir à la logique globale du réseau avant même sa mise en place.
+                L’objectif était de comprendre comment organiser les communications, répartir les adresses IP et justifier
+                des choix techniques adaptés à un réseau d’entreprise.
+            </p>
+
+            <h4>Ce que j’ai réalisé</h4>
+            <p>
+                J’ai étudié le modèle OSI, observé le rôle des couches 2 et 3, construit un plan d’adressage IP par service,
+                analysé des captures Wireshark sur Telnet et SSH, vérifié la passerelle par ping et testé la séparation des
+                réseaux avec des communications réussies ou bloquées selon les VLANs.
+            </p>
+
+            <h4>Ce que j’ai appris</h4>
+            <p>
+                J’ai compris la différence entre un protocole non sécurisé qui transmet les données en clair et un protocole
+                chiffré comme SSH. J’ai aussi compris pourquoi les VLANs et les sous-réseaux sont complémentaires pour mieux
+                organiser le trafic, limiter la diffusion et renforcer la sécurité du réseau.
+            </p>
+
+            <h4>Compétences développées</h4>
+            <ul class="service-list">
+                <li>Analyser l’architecture d’un réseau d’entreprise.</li>
+                <li>Construire un plan d’adressage IP cohérent.</li>
+                <li>Comprendre le rôle des couches 2 et 3 du modèle OSI.</li>
+                <li>Comparer Telnet et SSH sur le plan de la sécurité.</li>
+                <li>Lire et interpréter une capture Wireshark.</li>
+                <li>Vérifier la segmentation logique d’un réseau avec des tests de ping.</li>
+            </ul>
+
+            <h4>Problème rencontré</h4>
+            <p>
+                Au départ, je ne comprenais pas pourquoi utiliser des VLANs alors que des sous-réseaux IP existaient déjà.
+                En étudiant le fonctionnement du broadcast, j’ai compris que les VLANs limitent la diffusion sur le réseau
+                physique et réduisent le trafic inutile, tout en améliorant la sécurité entre groupes d’utilisateurs.
+            </p>
+
+            <div class="service-proof">
+                <p><strong>Preuves à ajouter :</strong></p>
+                <ul class="service-list">
+                    <li>Schéma de l’architecture réseau de l’entreprise.</li>
+                    <li>Capture Wireshark d’une connexion Telnet non sécurisée.</li>
+                    <li>Capture Wireshark d’une connexion SSH chiffrée.</li>
+                    <li>Tableau du plan d’adressage IP.</li>
+                    <li>Modèle OSI avec mise en évidence des couches 2 et 3.</li>
+                    <li>Schéma de segmentation VLAN sur Cisco.</li>
+                    <li>Ping réussi vers la passerelle.</li>
+                    <li>Ping réussi entre deux PC du même VLAN.</li>
+                    <li>Ping échoué entre deux VLANs différents.</li>
+                </ul>
+            </div>
+
+            <div class="service-images">
+                <figure>
+                    <img src="{{ asset('image/ac1102-architecture-reseau.png') }}" alt="Schéma de l’architecture réseau">
+                    <figcaption>Schéma de l’architecture réseau de l’entreprise.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="{{ asset('image/ac1102-wireshark-telnet.png') }}" alt="Capture Wireshark Telnet non sécurisée">
+                    <figcaption>Capture Wireshark d’une connexion Telnet non sécurisée.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="{{ asset('image/ac1102-wireshark-ssh.png') }}" alt="Capture Wireshark SSH chiffrée">
+                    <figcaption>Capture Wireshark d’une connexion SSH chiffrée.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="{{ asset('image/ac1102-ping-passerelle.png') }}" alt="Ping réussi vers la passerelle">
+                    <figcaption>Ping réussi vers l’adresse IP de la passerelle.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="{{ asset('image/ac1102-tableau-adressage.png') }}" alt="Tableau du plan d’adressage IP">
+                    <figcaption>Tableau du plan d’adressage IP par service.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="{{ asset('image/ac1102-modele-osi.png') }}" alt="Modèle OSI avec couches 2 et 3">
+                    <figcaption>Modèle OSI avec mise en évidence des couches 2 et 3.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="{{ asset('image/ac1102-segmentation-vlan-cisco.png') }}" alt="Schéma de segmentation VLAN sur Cisco">
+                    <figcaption>Schéma de segmentation VLAN sur Cisco.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="{{ asset('image/ac1102-ping-meme-vlan.png') }}" alt="Ping réussi entre deux PC du même VLAN">
+                    <figcaption>Ping réussi entre deux PC du même VLAN.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="{{ asset('image/ac1102-ping-echec-inter-vlan.png') }}" alt="Ping échoué entre deux VLANs différents">
+                    <figcaption>Ping échoué entre deux VLANs différents.</figcaption>
+                </figure>
+            </div>
+
+            <div class="service-summary">
+                <h4>Synthèse de la compétence</h4>
+                <p>
+                    Cet apprentissage m’a permis de mieux comprendre comment structurer un réseau de manière logique avant
+                    sa mise en place. J’ai appris à relier les aspects théoriques, comme le modèle OSI et la sécurité des
+                    communications, aux choix concrets d’architecture et de configuration réseau.
+                </p>
+            </div>
+        </div>
+    </div>
+</article>
+
+<article class="service-card">
+ <div class="service-content">
+        <h1>Synthèse globale – RT1.2 Administrer les Réseaux et l’Internet</h1>
+
+       
+    <div class="service-image-shell">
+        <img src="{{ asset('image/admin.png') }}" alt="Synthèse de la compétence RT1.2">
+    </div>
+
+         <p class="service-ac">
+            Bilan des trois apprentissages critiques de la compétence.
+        </h1>
+
+        <p class="service-text">
+            Cette compétence m’a permis de comprendre qu’administrer un réseau ne consiste pas uniquement à configurer
+            des équipements, mais aussi à structurer une architecture cohérente, utiliser un système d’exploitation
+            adapté et sécuriser les échanges entre les différents éléments du réseau.
+        </p>
+
+        <div class="service-tags">
+            <span>Administration réseau</span>
+            <span>Linux</span>
+            <span>VLAN</span>
+            <span>Sécurité</span>
+        </div>
+
+        <button type="button" class="service-btn" data-target="detail-rt1-synthese">
+            Voir le détail
+        </button>
+
+        <div id="detail-rt1-synthese" class="service-detail">
+            <h4>Appréciation critique de la compétence</h4>
+
+            <p>
+                Cette compétence m’a permis de comprendre que l’administration réseau ne consiste pas seulement à configurer
+                des équipements, mais à construire un environnement cohérent, fiable et adapté aux besoins d’une entreprise.
+                À travers les trois apprentissages critiques que j’ai réalisés, j’ai appris à relier la théorie à la pratique,
+                à mieux organiser un réseau local et à comprendre l’impact concret des choix techniques sur le fonctionnement
+                global d’une infrastructure.
+            </p>
+
+            <p>
+                Le premier apprentissage m’a aidé à mettre en place les bases de l’administration d’un réseau local.
+                J’y ai appris à configurer un switch Cisco vierge, à créer des VLANs, à utiliser un serveur TFTP et à
+                vérifier le bon fonctionnement des liaisons entre équipements. Cette expérience m’a montré qu’un réseau
+                doit être pensé méthodiquement, avec une logique de segmentation et de validation progressive.
+            </p>
+
+            <p>
+                Le deuxième apprentissage m’a permis de mieux comprendre le rôle d’un système d’exploitation dans
+                l’administration réseau. En travaillant sur Ubuntu, j’ai dû utiliser le terminal, gérer les droits,
+                modifier une configuration réseau et tester la connectivité avec d’autres équipements. Cette activité
+                m’a appris à utiliser Linux comme un véritable outil d’administration et pas seulement comme un simple
+                environnement utilisateur.
+            </p>
+
+            <p>
+                Le troisième apprentissage m’a apporté une vision plus globale du réseau. Il m’a permis de comprendre
+                l’architecture logique d’un système numérique, le rôle des couches du modèle OSI, la différence entre
+                les VLANs et les sous-réseaux IP, ainsi que l’importance de la sécurité des communications avec des
+                protocoles comme SSH. Grâce aux analyses réseau et aux tests de connectivité, j’ai pu relier les notions
+                théoriques aux effets concrets sur le trafic et sur la sécurité.
+            </p>
+
+            <p>
+                Au final, ces trois apprentissages m’ont apporté une vision complète de l’administration réseau.
+                J’ai appris à organiser un réseau de manière logique, à configurer des équipements réels, à interagir
+                avec un système Linux et à sécuriser les communications. Cette compétence m’a aussi fait progresser
+                dans ma méthode de travail : je suis plus rigoureux, plus autonome et plus capable d’analyser un
+                problème avant d’agir.
+            </p>
+        </div>
+    </div>
+</article>
+</section>
+
+<section class="services-section competence-block" id="rt2">
+    <div class="competence-header">
+        <h2 class="competence-title">RT2.2 – CONNECTER LES ENTREPRISES ET LES USAGERS</h2>
+        <div class="competence-underline"></div>
+    </div>
+
+    <div class="services-intro">
+        <p>
+            Cette compétence présente les premiers apprentissages développés dans le cadre du BUT Réseaux & Télécommunications.
+            Elle met en avant ma capacité à comprendre les systèmes de transmission, analyser des signaux, utiliser des outils
+            de mesure et relier les observations expérimentales aux modèles théoriques étudiés en formation.
+        </p>
+    </div>
+
+    <div class="services-grid">
+        <article class="service-card">
+            <div class="service-image-shell">
+                <img src="{{ asset('image/op.png') }}" alt="Étude expérimentale de signaux périodiques avec GBF et oscilloscope">
+            </div>
+
+            <div class="service-content">
+                <h3>AC12.02 – Caractériser des systèmes de transmissions élémentaires et découvrir la modélisation mathématique de leur fonctionnement</h3>
+
+                <p class="service-ac">
+                    Étude expérimentale de signaux périodiques avec GBF et oscilloscope.
+                </p>
+
+                <p class="service-text">
+                    Cette activité m’a permis de relier les mesures expérimentales aux modèles mathématiques étudiés en cours.
+                    À partir d’un signal périodique généré par un GBF, j’ai utilisé un oscilloscope pour vérifier sa période,
+                    sa fréquence, son amplitude et sa forme, afin de comparer les résultats obtenus avec les valeurs théoriques.
+                </p>
+
+                <div class="service-tags">
+                    <span>Signal périodique</span>
+                    <span>GBF</span>
+                    <span>Oscilloscope</span>
+                    <span>Maths du signal</span>
+                    <span>FFT</span>
+                </div>
+
+                <button type="button" class="service-btn" data-target="detail-ac1202">
+                    Voir le détail
+                </button>
+
+                <div id="detail-ac1202" class="service-detail">
+                    <h4>Présentation</h4>
+                    <p>
+                        Dans le cadre du module R1.04, un générateur basses fréquences a été utilisé pour produire différents
+                        signaux périodiques, ensuite observés à l’oscilloscope. L’objectif était de relier les mesures
+                        expérimentales aux modèles mathématiques vus en mathématiques du signal et de vérifier que le comportement
+                        réel correspondait aux expressions théoriques.
+                    </p>
+
+                    <h4>Ce que j’ai réalisé</h4>
+                    <p>
+                        J’ai étudié le signal e(t)=2+5sin(3140t), puis j’ai identifié ses paramètres principaux : valeur
+                        moyenne de 2 V, pulsation de 3140 rad/s et fréquence d’environ 500 Hz. J’ai ensuite réglé le GBF pour
+                        obtenir ce signal, utilisé l’oscilloscope pour mesurer la période et vérifié que T ≈ 2 ms.
+                    </p>
+
+                    <h4>Ce que j’ai appris</h4>
+                    <p>
+                        Cette activité m’a appris à faire le lien entre les calculs théoriques et les mesures réelles. J’ai mieux
+                        compris comment passer de la pulsation à la fréquence, comment interpréter la forme d’un signal sur un
+                        oscilloscope et comment vérifier la cohérence entre un modèle mathématique et une observation expérimentale.
+                    </p>
+
+                    <h4>Compétences développées</h4>
+                    <ul class="service-list">
+                        <li>Identifier les paramètres d’un signal périodique.</li>
+                        <li>Relier une expression mathématique à une mesure expérimentale.</li>
+                        <li>Utiliser un GBF et un oscilloscope.</li>
+                        <li>Lire une période, une fréquence et une amplitude sur un signal.</li>
+                        <li>Comparer les valeurs mesurées aux valeurs théoriques.</li>
+                        <li>Comprendre l’intérêt de la FFT pour analyser les composantes fréquentielles.</li>
+                    </ul>
+
+                    <h4>Problème rencontré</h4>
+                    <p>
+                        Au départ, il était difficile de passer de la pulsation à la fréquence, ce qui compliquait le réglage du
+                        GBF et l’interprétation des mesures affichées par l’oscilloscope. En utilisant la relation
+                        ω = 2πf, j’ai pu déterminer une fréquence d’environ 500 Hz et obtenir un signal stable.
+                    </p>
+
+                    <div class="service-proof">
+                        <p><strong>Preuves à ajouter :</strong></p>
+                        <ul class="service-list">
+                            <li>Capture de l’étude expérimentale du signal sur oscilloscope.</li>
+                            <li>Utilisation du GBF pendant la manipulation.</li>
+                            <li>Observation du fonctionnement général de l’oscilloscope.</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-images">
+                        <figure>
+                            <img src="{{ asset('image/ac1202-signaux-periodiques-gbf-oscilloscope.png') }}" alt="Étude expérimentale sur oscilloscope">
+                            <figcaption>Observation expérimentale d’un signal périodique à l’oscilloscope.</figcaption>
+                        </figure>
+
+                        <figure>
+                            <img src="{{ asset('image/user-gbf.png') }}" alt="Utilisation du GBF">
+                            <figcaption>Utilisation du générateur basses fréquences pendant la manipulation.</figcaption>
+                        </figure>
+
+                        <figure>
+                            <img src="{{ asset('image/focnt-de-lo.png') }}" alt="Fonctionnement de l’oscilloscope">
+                            <figcaption>Vue d’ensemble du fonctionnement de l’oscilloscope lors des mesures.</figcaption>
+                        </figure>
+                    </div>
+                    <div class="service-summary">
+    <h4>Synthèse de l’apprentissage</h4>
+    <p>
+        Cet apprentissage m’a permis de mieux comprendre qu’un signal peut être étudié à la fois par l’observation
+        expérimentale et par la modélisation mathématique. J’ai appris à relier les grandeurs théoriques, comme la
+        pulsation, la fréquence, la période ou l’amplitude, aux mesures réalisées avec le GBF et l’oscilloscope.
+        Cette activité m’a aussi aidé à développer plus de rigueur dans l’analyse des signaux et une meilleure
+        compréhension du lien entre théorie, mesure et interprétation.
+    </p>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <article class="service-card">
+    <div class="service-image-shell">
+        <img src="{{ asset('image/opp.png') }}" alt="Testeur de câbles réseau">
+    </div>
+
+    <div class="service-content">
+        <h3>AC12.01 – Mesurer et analyser les signaux</h3>
+
+        <p class="service-ac">
+            Vérification et analyse de l’état des liaisons cuivre à l’aide d’un testeur de câbles réseau.
+        </p>
+
+        <p class="service-text">
+            Dans le cadre de la SAÉ 1.03, j’ai participé au contrôle des câbles reliant les répartiteurs réseau aux postes
+            de travail afin de vérifier leur conformité, repérer les défauts éventuels et valider leur exploitation.
+        </p>
+
+        <div class="service-tags">
+            <span>Cable IQ</span>
+            <span>Mesure</span>
+            <span>Câblage cuivre</span>
+            <span>Baie réseau</span>
+            <span>Patch panel</span>
+        </div>
+
+        <button type="button" class="service-btn" data-target="detail-ac1201">
+            Voir le détail
+        </button>
+
+        <div id="detail-ac1201" class="service-detail">
+            <h4>Présentation</h4>
+            <p>
+                Dans le cadre du projet 2 de la SAÉ 1.03, la réorganisation de la salle G007 a nécessité l’ajout de deux
+                répartiteurs réseau, nommés B et C. Les liaisons entre ces répartiteurs et les tables 1 à 8 devaient être
+                testées afin de s’assurer que chaque câble était correctement câblé et exploitable.
+            </p>
+
+            <h4>Ce que j’ai réalisé</h4>
+            <p>
+                J’ai utilisé un testeur de câbles réseau de type Cable IQ pour contrôler l’état des liaisons cuivre, vérifier
+                la continuité, la longueur des câbles, le câblage des paires et détecter d’éventuels défauts. Avec mon groupe,
+                nous avons ensuite renseigné un tableau récapitulatif indiquant pour chaque prise si la liaison était conforme
+                ou non, ainsi que le type de défaut repéré si nécessaire.
+            </p>
+
+            <h4>Ce que j’ai appris</h4>
+            <p>
+                Cette activité m’a appris à utiliser un outil de mesure réseau de manière plus méthodique et à interpréter
+                ses résultats de façon fiable. J’ai aussi mieux compris l’importance de la vérification physique du câblage
+                dans le bon fonctionnement d’une installation réseau.
+            </p>
+
+            <h4>Compétences développées</h4>
+            <ul class="service-list">
+                <li>Utiliser un testeur de câbles réseau de type Cable IQ.</li>
+                <li>Vérifier la conformité d’une liaison cuivre.</li>
+                <li>Identifier des défauts de câblage sur une installation réseau.</li>
+                <li>Lire et interpréter les résultats d’un outil de mesure.</li>
+                <li>Travailler en groupe avec une répartition efficace des tâches.</li>
+                <li>Rédiger un relevé clair des tests effectués.</li>
+            </ul>
+
+            <h4>Problème rencontré</h4>
+            <p>
+                Au début, certaines fonctions du Cable IQ n’étaient plus parfaitement maîtrisées, ce qui rendait l’utilisation
+                du testeur moins fluide. La relecture du dossier technique fourni nous a permis de revoir la procédure
+                d’utilisation, de mieux comprendre les messages affichés et d’effectuer les tests de manière plus rigoureuse.
+            </p>
+
+            <div class="service-proof">
+                <p><strong>Preuves à ajouter :</strong></p>
+                <ul class="service-list">
+                    <li>Photo du testeur de câbles réseau.</li>
+                    <li>Photo de l’appareil Cable IQ utilisé.</li>
+                    <li>Photo du patch panel.</li>
+                    <li>Photo du testeur branché sur la baie ou sur le câblage.</li>
+                </ul>
+            </div>
+
+            <div class="service-images">
+                <figure>
+                    <img src="{{ asset('image/ac1201-testeur-cables.png') }}" alt="Testeur de câbles réseau">
+                    <figcaption>Testeur de câbles réseau utilisé pour contrôler les liaisons cuivre.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="{{ asset('image/ac1201-appareil-cable-iq.png') }}" alt="Appareil Cable IQ">
+                    <figcaption>Appareil Cable IQ utilisé pendant les mesures.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="{{ asset('image/ac1201-patch-panel.png') }}" alt="Patch panel">
+                    <figcaption>Patch panel observé dans l’installation réseau de la salle.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="{{ asset('image/ac1201-testeur-sur-baie.png') }}" alt="Testeur branché sur la baie réseau">
+                    <figcaption>Test du câblage réalisé directement sur la baie réseau.</figcaption>
+                </figure>
+            </div>
+
+            <div class="service-summary">
+                <h4>Synthèse de l’apprentissage</h4>
+                <p>
+                    Cet apprentissage m’a permis de comprendre que l’analyse d’un réseau passe aussi par la vérification
+                    physique des liaisons. J’y ai développé davantage de rigueur dans les mesures, une meilleure lecture
+                    des résultats techniques et une méthode de travail plus structurée en équipe.
+                </p>
+            </div>
+        </div>
+    </div>
+</article>
+
+<article class="service-card">
+    <div class="service-image-shell">
+        <img src="{{ asset('image/4.png') }}" alt="Baie informatique">
+    </div>
+
+    <div class="service-content">
+        <h3>AC12.05 – Communiquer avec un tiers et adapter son discours et sa langue à son interlocuteur</h3>
+
+        <p class="service-ac">
+            Conception et présentation d’un devis complet pour le renouvellement du matériel passif d’une salle réseau.
+        </p>
+
+        <p class="service-text">
+            Dans le cadre d’un projet du département RT, nous avons réalisé un devis détaillé pour proposer une solution
+            cohérente et compréhensible à un client non spécialiste, tout en respectant les contraintes techniques et
+            budgétaires du cahier des charges.
+        </p>
+
+        <div class="service-tags">
+            <span>Devis</span>
+            <span>Communication</span>
+            <span>Matériel réseau</span>
+            <span>Vulgarisation</span>
+            <span>Budget</span>
+        </div>
+
+        <button type="button" class="service-btn" data-target="detail-ac1205">
+            Voir le détail
+        </button>
+
+        <div id="detail-ac1205" class="service-detail">
+            <h4>Présentation</h4>
+            <p>
+                Ce travail consistait à proposer un devis complet pour le renouvellement du matériel passif de la salle
+                réseaux G007 : baie, panneaux de brassage, câbles, prises RJ45, goulottes et accessoires de fixation.
+                L’objectif était de construire une solution réaliste, claire et adaptée à un interlocuteur non spécialiste.
+            </p>
+
+            <h4>Ce que j’ai réalisé</h4>
+            <p>
+                J’ai recherché et comparé plusieurs références dans un e-catalogue afin de sélectionner les éléments les
+                plus adaptés. J’ai ensuite rédigé un devis détaillé avec les références, les quantités, les prix unitaires
+                et le coût total, puis j’ai structuré le document pour faire apparaître d’abord les besoins, la solution et
+                le budget.
+            </p>
+
+            <h4>Ce que j’ai appris</h4>
+            <p>
+                Cette activité m’a appris à justifier des choix techniques de manière simple et accessible. J’ai aussi
+                compris l’importance d’adapter son vocabulaire selon l’interlocuteur et de présenter une solution de façon
+                claire, structurée et professionnelle.
+            </p>
+
+            <h4>Compétences développées</h4>
+            <ul class="service-list">
+                <li>Lire un cahier des charges et identifier les besoins essentiels.</li>
+                <li>Comparer plusieurs références de matériel réseau.</li>
+                <li>Construire un devis clair et complet.</li>
+                <li>Adapter son discours à un client non spécialiste.</li>
+                <li>Vulgariser des notions techniques simples.</li>
+                <li>Présenter et justifier des choix matériels de manière professionnelle.</li>
+            </ul>
+
+            <h4>Problème rencontré</h4>
+            <p>
+                Le principal difficulté a été le choix entre plusieurs références très proches. Pour faciliter la décision,
+                j’ai créé un tableau comparatif avec les prix, les caractéristiques techniques, la disponibilité et
+                l’évolutivité. Le devis était aussi trop complexe pour un non spécialiste, donc j’ai simplifié le vocabulaire
+                et ajouté un résumé clair au début du document.
+            </p>
+
+            <div class="service-proof">
+                <p><strong>Preuves à ajouter :</strong></p>
+                <ul class="service-list">
+                    <li>Capture ou export du tableau de devis.</li>
+                    <li>Capture du e-catalogue utilisé pour la recherche des références.</li>
+                    <li>Schéma simple de brassage : prise murale → panneau de brassage → switch.</li>
+                    <li>Photo ou schéma de la baie informatique.</li>
+                </ul>
+            </div>
+
+            <div class="service-images">
+                <figure>
+                    <img src="{{ asset('image/1.png') }}" alt="Baie informatique">
+                    <figcaption>Baie informatique utilisée pour présenter la solution réseau.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="{{ asset('image/2.png') }}" alt="Tableau de devis">
+                    <figcaption>Tableau récapitulatif du devis avec les références et les coûts.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="{{ asset('image/3.png') }}" alt="Schéma de brassage simple">
+                    <figcaption>Schéma simple du brassage entre la prise murale, le panneau de brassage et le switch.</figcaption>
+                </figure>
+            </div>
+
+            <div class="service-summary">
+                <h4>Synthèse de l’apprentissage</h4>
+                <p>
+                    Cet apprentissage m’a appris à communiquer une solution technique de façon claire, structurée et adaptée
+                    à un interlocuteur non spécialiste. J’ai développé ma capacité à argumenter mes choix, à reformuler un besoin
+                    et à rendre un document technique plus compréhensible et plus professionnel.
+                </p>
+            </div>
+        </div>
+    </div>
+</article>
+<div class="service-content">
+    <h1>Synthèse globale – RT2.2 Connecter les Entreprises et les Usagers</h1>
+
+    <div class="service-image-shell">
+        <img src="{{ asset('image/ahh.png') }}" alt="Synthèse de la compétence RT2.2">
+    </div>
+
+    <p class="service-ac">
+        Bilan des trois apprentissages critiques de la compétence.
+    </p>
+
+    <p class="service-text">
+        Cette compétence m’a permis de comprendre qu’un réseau ne se limite pas à des équipements ou à des mesures,
+        mais qu’il doit aussi être pensé selon les besoins réels d’une installation et d’un interlocuteur. J’ai appris
+        à analyser des signaux, à utiliser des outils de mesure, à choisir du matériel adapté et à présenter une solution
+        technique de façon claire et professionnelle.
+    </p>
+
+    <div class="service-tags">
+        <span>Mesure</span>
+        <span>Transmission</span>
+        <span>Communication</span>
+        <span>Devis</span>
+    </div>
+
+    <button type="button" class="service-btn" data-target="detail-rt2-synthese">
+        Voir le détail
+    </button>
+
+    <div id="detail-rt2-synthese" class="service-detail">
+        <h4>Appréciation critique de la compétence</h4>
+
+        <p>
+            Cette compétence m’a permis de relier les aspects techniques d’un réseau aux besoins concrets d’une
+            installation et à la communication avec un interlocuteur. À travers les trois apprentissages critiques
+            réalisés, j’ai appris à observer, mesurer, comparer et expliquer des solutions adaptées au contexte.
+        </p>
+
+        <p>
+            Le premier apprentissage m’a permis de comprendre comment mesurer et analyser un signal à l’aide d’outils
+            adaptés comme le GBF et l’oscilloscope. J’ai appris à relier les grandeurs théoriques aux observations
+            réelles et à mieux interpréter le comportement d’un signal dans un système de transmission.
+        </p>
+
+        <p>
+            Le deuxième apprentissage m’a montré l’importance de la vérification physique des liaisons réseau. En
+            utilisant un testeur de câbles, j’ai appris à contrôler la conformité d’une installation, à repérer les
+            défauts de câblage et à travailler de manière plus méthodique en équipe.
+        </p>
+
+        <p>
+            Le troisième apprentissage m’a apporté une vision plus professionnelle de la communication technique.
+            J’ai appris à construire un devis cohérent, à justifier des choix matériels et à adapter mon discours
+            à un interlocuteur non spécialiste tout en restant précis et rigoureux.
+        </p>
+
+        <p>
+            Au final, cette compétence m’a permis de développer une approche plus complète des réseaux et des
+            transmissions. J’ai appris à relier la mesure, l’analyse technique et la communication, ce qui m’aide
+            à mieux comprendre une installation dans son ensemble et à présenter mes travaux de manière claire,
+            structurée et professionnelle.
+        </p>
+    </div>
+</div>
+</section>
+<section class="services-section competence-block" id="rt3">
+    <div class="competence-header">
+        <h2 class="competence-title">RT3 – CRÉER DES OUTILS ET DES APPLICATIONS INFORMATIQUES POUR LES R&T</h2>
+        <div class="competence-underline"></div>
+    </div>
+
+    <div class="services-intro">
+        <p>
+            Cette compétence présente les premiers apprentissages développés dans le cadre de la programmation et de la
+            création d’outils informatiques en BUT Réseaux & Télécommunications. Elle met en avant ma capacité à lire,
+            exécuter, corriger et améliorer des programmes, tout en développant une méthode rigoureuse de conception,
+            de test et de débogage.
+        </p>
+    </div>
+
+    <div class="services-grid">
+        <article class="service-card">
+            <div class="service-image-shell">
+                <img src="{{ asset('image/01.png') }}" alt="Programme en C calculant la somme de 1 à n">
+            </div>
+
+            <div class="service-content">
+                <h3>AC13.02 – Lire, exécuter, corriger et modifier un programme</h3>
+
+                <p class="service-ac">
+                    Développement de programmes en Python et en C pour comprendre les bases de l’algorithmique et du débogage.
+                </p>
+
+                <p class="service-text">
+                    Cette activité m’a permis de comprendre qu’un programme ne se limite pas à son écriture, mais qu’il
+                    faut aussi savoir le lire, l’exécuter, le tester, corriger ses erreurs et l’améliorer progressivement.
+                    En travaillant en Python et en C, j’ai appris à appliquer les structures algorithmiques de base dans
+                    des exercices concrets et variés.
+                </p>
+
+                <div class="service-tags">
+                    <span>Python</span>
+                    <span>C</span>
+                    <span>Algorithmes</span>
+                    <span>Débogage</span>
+                    <span>Fonctions</span>
+                </div>
+
+                <button type="button" class="service-btn" data-target="detail-ac1302">
+                    Voir le détail
+                </button>
+
+                <div id="detail-ac1302" class="service-detail">
+                    <h4>Présentation</h4>
+                    <p>
+                        Dans le cadre de la ressource R1.07, j’ai développé plusieurs programmes pour m’approprier les
+                        structures algorithmiques de base et les bonnes pratiques de programmation. J’ai travaillé sur
+                        Python, pour sa simplicité, et sur le langage C, pour mieux comprendre la gestion des types,
+                        de la mémoire et de la structure d’un programme compilé.
+                    </p>
+
+                    <h4>Ce que j’ai réalisé</h4>
+                    <p>
+                        J’ai conçu et exécuté plusieurs programmes répondant à des besoins variés : calculs numériques,
+                        petits jeux, traitement de chaînes de caractères, manipulation de tableaux ou calculs sur des
+                        listes de notes. J’ai utilisé des structures conditionnelles, des boucles, des fonctions et des
+                        tableaux, puis j’ai testé les programmes avec des cas simples, des cas limites et des données erronées.
+                    </p>
+
+                    <h4>Ce que j’ai appris</h4>
+                    <p>
+                        Cette activité m’a appris à décomposer un problème en étapes logiques, à écrire un algorithme,
+                        puis à le traduire en code en tenant compte des spécificités de chaque langage. J’ai aussi mieux
+                        compris l’intérêt de la modularité, de la lisibilité du code, de la gestion des données et des tests
+                        pour produire un programme fiable et maintenable.
+                    </p>
+
+                    <h4>Compétences développées</h4>
+                    <ul class="service-list">
+                        <li>Utiliser des structures conditionnelles pour adapter le comportement d’un programme.</li>
+                        <li>Mettre en œuvre des boucles pour répéter des traitements ou parcourir des tableaux.</li>
+                        <li>Créer des fonctions simples et réutilisables.</li>
+                        <li>Manipuler des tableaux, des chaînes de caractères et des fichiers.</li>
+                        <li>Compiler, exécuter et tester un programme en Python et en C.</li>
+                        <li>Corriger des erreurs de syntaxe, de logique ou d’exécution.</li>
+                    </ul>
+
+                    <h4>Problèmes rencontrés</h4>
+                    <p>
+                        J’ai rencontré plusieurs difficultés, notamment en C, avec des erreurs de syntaxe, des problèmes
+                        d’indices, des affichages incorrects de caractères ASCII ou des comportements inattendus. J’ai aussi
+                        eu des difficultés dans la gestion des chaînes de caractères, par exemple pour traiter correctement
+                        les majuscules et les minuscules dans certains exercices.
+                    </p>
+
+                    <h4>Solutions mises en œuvre</h4>
+                    <p>
+                        Pour résoudre ces problèmes, j’ai appris à relire méthodiquement mon code, à interpréter les messages
+                        de compilation, à vérifier les formats d’affichage, à contrôler les bornes des tableaux et à tester
+                        les programmes avec différentes valeurs. J’ai également amélioré la lisibilité de mes programmes en
+                        les découpant davantage en fonctions et en renommant certaines variables de manière plus explicite.
+                    </p>
+
+                    <div class="service-proof">
+                        <p><strong>Preuves à ajouter :</strong></p>
+                        <ul class="service-list">
+                            <li>Capture d’un programme en C calculant la somme des entiers de 1 à n.</li>
+                            <li>Capture d’un fichier Python avec boucle et structure conditionnelle.</li>
+                            <li>Capture d’un programme en C avec main, variables, boucle et printf.</li>
+                            <li>Capture de l’exécution d’un programme avec saisie et affichage des résultats.</li>
+                            <li>Capture d’un programme en C traitant des notes.</li>
+                            <li>Capture du même traitement réalisé en Python.</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-images">
+                        <figure>
+                            <img src="{{ asset('image/11.png') }}" alt="Programme C somme de 1 à n">
+                            <figcaption>Programme en C calculant la somme des entiers de 1 à n.</figcaption>
+                        </figure>
+
+                        <figure>
+                            <img src="{{ asset('image/12.png') }}" alt="Programme Python avec boucle et if">
+                            <figcaption>Fichier Python utilisant une boucle et une structure conditionnelle.</figcaption>
+                        </figure>
+
+                        <figure>
+                            <img src="{{ asset('image/13.png') }}" alt="Programme C avec main, variables, boucle et printf">
+                            <figcaption>Structure de base d’un programme en C avec variables, boucle et affichage.</figcaption>
+                        </figure>
+
+                        <figure>
+                            <img src="{{ asset('image/14.png') }}" alt="Exécution du programme avec tests">
+                            <figcaption>Exécution d’un programme avec saisie des données et affichage des résultats.</figcaption>
+                        </figure>
+
+                        <figure>
+                            <img src="{{ asset('image/15.png') }}" alt="Programme C sur les notes">
+                            <figcaption>Programme en C lisant des notes et calculant la somme, la moyenne et la note maximale.</figcaption>
+                        </figure>
+
+                        <figure>
+                            <img src="{{ asset('image/16.png') }}" alt="Programme Python sur les notes">
+                            <figcaption>Programme Python lisant des notes et calculant la somme, la moyenne et la note maximale.</figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="service-summary">
+                        <h4>Synthèse de l’apprentissage</h4>
+                        <p>
+                            Cet apprentissage m’a permis de comprendre qu’un programme doit être lu, exécuté, testé,
+                            corrigé et amélioré pour devenir réellement fiable. En travaillant en Python et en C, j’ai
+                            appris à relier la logique algorithmique, la qualité du code et la méthode de débogage.
+                            Cette activité m’a aussi aidé à devenir plus rigoureux, plus autonome et plus attentif à
+                            l’organisation et à la lisibilité de mes programmes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+<article class="service-card">
+    <div class="service-image-shell">
+        <img src="{{ asset('image/100.png') }}" alt="Choix des mécanismes de gestion des données">
+    </div>
+
+    <div class="service-content">
+        <h3>AC13.05 – Choisir les mécanismes de gestion de données adaptés au développement de l’outil et argumenter ses choix</h3>
+
+        <p class="service-ac">
+            Choisir entre mémoire vive, fichier disque et séparation logique/presentation selon le besoin du projet.
+        </p>
+
+        <p class="service-text">
+            Dans mes projets de développement, j’ai dû réfléchir à la manière la plus adaptée de stocker et d’organiser
+            les informations utilisées par mes programmes. Cela m’a amené à distinguer les données utilisées uniquement
+            pendant l’exécution de celles qui doivent être conservées sur la durée pour l’utilisateur.
+        </p>
+
+        <div class="service-tags">
+            <span>Mémoire vive</span>
+            <span>Fichiers</span>
+            <span>Twig</span>
+            <span>Organisation des données</span>
+            <span>Persistance</span>
+        </div>
+
+        <button type="button" class="service-btn" data-target="detail-ac1305">
+            Voir le détail
+        </button>
+
+        <div id="detail-ac1305" class="service-detail">
+            <h4>Présentation</h4>
+            <p>
+                Cette compétence m’a permis de comprendre qu’un outil informatique ne se limite pas à son fonctionnement
+                immédiat, mais qu’il faut aussi réfléchir à la façon dont ses données sont stockées, conservées et affichées.
+                J’ai appris à distinguer les informations temporaires manipulées en mémoire et celles qui doivent être
+                sauvegardées sur le disque pour être retrouvées plus tard.
+            </p>
+
+            <h4>Ce que j’ai réalisé</h4>
+            <p>
+                Dans un programme de calcul de moyenne, j’ai utilisé un tableau pour stocker les notes en mémoire vive et
+                effectuer rapidement les calculs. Dans un exercice de traitement de texte, j’ai enregistré le résultat dans
+                un fichier afin que l’utilisateur puisse le relire plus tard. Dans un projet Symfony, j’ai séparé les textes
+                et la mise en page dans des fichiers Twig pour dissocier la logique du programme et son affichage.
+            </p>
+
+            <h4>Ce que j’ai appris</h4>
+            <p>
+                J’ai appris qu’il faut toujours adapter le support de données au besoin réel. Les tableaux sont adaptés aux
+                traitements rapides et temporaires, tandis que les fichiers permettent de conserver l’information sur le
+                long terme. J’ai aussi compris que la séparation entre code métier et présentation rend un projet plus clair,
+                plus simple à modifier et moins fragile.
+            </p>
+
+            <h4>Compétences développées</h4>
+            <ul class="service-list">
+                <li>Choisir un support de données adapté au besoin du programme.</li>
+                <li>Utiliser un tableau ou une liste pour des calculs rapides en mémoire.</li>
+                <li>Écrire et lire des données dans un fichier.</li>
+                <li>Assurer la sauvegarde correcte des informations.</li>
+                <li>Séparer la logique applicative et la présentation avec Twig.</li>
+                <li>Argumenter un choix technique de manière claire et cohérente.</li>
+            </ul>
+
+            <h4>Problème rencontré</h4>
+            <p>
+                J’ai constaté que si un programme se termine trop tôt ou plante avant la fermeture d’un fichier, les données
+                peuvent ne pas être réellement enregistrées. Ce problème m’a montré que la simple écriture dans un fichier ne
+                suffit pas : il faut aussi s’assurer que les données sont correctement fermées et sauvegardées.
+            </p>
+
+            <h4>Solutions mises en œuvre</h4>
+            <p>
+                Pour résoudre ce problème, j’ai appris à fermer explicitement les fichiers après écriture, par exemple avec
+                <em>fclose()</em> en C ou <em>close()</em> en Python. J’ai aussi veillé à utiliser des noms de fichiers
+                explicites, des formats cohérents et des structures de données lisibles pour faciliter la maintenance et la
+                relecture du programme.
+            </p>
+
+            <div class="service-proof">
+                <p><strong>Preuves à ajouter :</strong></p>
+                <ul class="service-list">
+                    <li>Schéma illustrant la mémoire vive utilisée par le programme.</li>
+                    <li>Capture d’un fichier de stockage sur disque.</li>
+                    <li>Capture d’un écran partagé entre code / logique et interface / affichage.</li>
+                    <li>Schéma de transfert d’informations entre programme et support de stockage.</li>
+                </ul>
+            </div>
+
+            <div class="service-images">
+                <figure>
+                    <img src="{{ asset('image/111.png') }}" alt="Mémoire vive RAM">
+                    <figcaption>Utilisation de la mémoire vive pour les données temporaires.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="{{ asset('image/122.png') }}" alt="Stockage fichier disque">
+                    <figcaption>Stockage des données sur disque dans un fichier.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="{{ asset('image/133.png') }}" alt="Séparation logique et présentation">
+                    <figcaption>Séparation entre la logique du programme et son interface.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="{{ asset('image/144.png') }}" alt="Schéma de transfert des données">
+                    <figcaption>Transfert des informations entre le programme et le support de stockage.</figcaption>
+                </figure>
+            </div>
+
+            <div class="service-summary">
+                <h4>Synthèse de l’apprentissage</h4>
+                <p>
+                    Cet apprentissage m’a permis de comprendre qu’il faut choisir le bon mécanisme de gestion des données
+                    selon le besoin du programme. J’ai appris à distinguer les données temporaires de celles à conserver,
+                    à utiliser la mémoire, les fichiers ou les templates de façon pertinente, et à argumenter mes choix
+                    techniques. Cette expérience m’a rendu plus rigoureux dans l’organisation des données et plus attentif
+                    à la qualité globale de mes outils.
+                </p>
+            </div>
+        </div>
+    </div>
+</article>
+
+<article class="service-card">
+    <div class="service-image-shell">
+        <img src="{{ asset('image/0000.png') }}" alt="Dépôt GitHub du site e-portfolio">
+    </div>
+
+    <div class="service-content">
+        <h3>AC13.06 – S’intégrer dans un environnement propice au développement et au travail collaboratif</h3>
+
+        <p class="service-ac">
+            Mise en place d’un environnement de travail structuré avec Git et GitHub pour développer et partager le site e-portfolio.
+        </p>
+
+        <p class="service-text">
+            Dans le cadre de la SAé 1.04, j’ai mis en place un environnement de travail permettant de développer,
+            sauvegarder et partager le code source de mon site e-portfolio de manière structurée. Pour cela, j’ai utilisé
+            Git en local et GitHub comme plateforme distante afin de suivre l’évolution du projet et de préparer un mode
+            de travail similaire à celui utilisé en entreprise.
+        </p>
+
+        <div class="service-tags">
+            <span>Git</span>
+            <span>GitHub</span>
+            <span>Versioning</span>
+            <span>Travail collaboratif</span>
+            <span>Historique</span>
+        </div>
+
+        <button type="button" class="service-btn" data-target="detail-ac1306">
+            Voir le détail
+        </button>
+
+        <div id="detail-ac1306" class="service-detail">
+            <h4>Présentation</h4>
+            <p>
+                Cet apprentissage m’a permis de comprendre l’intérêt d’un environnement de développement structuré pour
+                organiser mon travail, suivre les évolutions du projet et sécuriser le code source. J’ai utilisé Git pour
+                gérer l’historique des modifications et GitHub pour centraliser le dépôt distant.
+            </p>
+
+            <h4>Ce que j’ai réalisé</h4>
+            <p>
+                J’ai créé un dépôt local avec Git, puis un dépôt distant sur GitHub afin d’associer les deux et de pouvoir
+                envoyer ou récupérer le code depuis n’importe quel poste. J’ai validé régulièrement mes modifications, ajouté
+                de nouvelles pages, intégré les feuilles de style et ajusté la mise en page du site e-portfolio.
+            </p>
+
+            <h4>Ce que j’ai appris</h4>
+            <p>
+                J’ai appris à utiliser les commandes essentielles de Git, à consulter l’historique des commits, à comprendre
+                le rôle des branches et à travailler avec un dépôt distant. Cette activité m’a aussi montré l’importance de
+                garder un historique clair, de synchroniser régulièrement son travail et de préparer un environnement adapté
+                à un usage collaboratif.
+            </p>
+
+            <h4>Compétences développées</h4>
+            <ul class="service-list">
+                <li>Initialiser un dépôt Git local.</li>
+                <li>Associer un dépôt local à GitHub.</li>
+                <li>Valider les modifications avec des commits réguliers.</li>
+                <li>Consulter et comprendre l’historique du projet.</li>
+                <li>Utiliser la branche principale et comprendre l’intérêt des branches.</li>
+                <li>Adopter de bonnes pratiques de sauvegarde et de partage du code.</li>
+            </ul>
+
+            <h4>Problèmes rencontrés</h4>
+            <p>
+                J’ai rencontré quelques difficultés de synchronisation entre le dépôt local et GitHub, notamment lors des
+                opérations de push ou de pull. J’ai aussi parfois oublié certains fichiers dans mes commits ou rédigé des
+                messages trop vagues, ce qui rendait l’historique moins lisible.
+            </p>
+
+            <h4>Solutions mises en œuvre</h4>
+            <p>
+                Pour résoudre ces problèmes, j’ai vérifié plus systématiquement la branche utilisée, corrigé l’URL du dépôt
+                distant et relu l’état du dépôt avant chaque validation. J’ai aussi amélioré la rédaction des messages de
+                commit en utilisant des verbes d’action et des descriptions plus précises.
+            </p>
+
+            <div class="service-proof">
+                <p><strong>Preuves à ajouter :</strong></p>
+                <ul class="service-list">
+                    <li>Capture du repository GitHub contenant le site web.</li>
+                    <li>Capture de l’historique des commits.</li>
+                    <li>Capture du lien entre dépôt local et dépôt distant.</li>
+                </ul>
+            </div>
+
+            <div class="service-images">
+                <figure>
+                    <img src="{{ asset('image/1111.png') }}" alt="Repository GitHub du site e-portfolio">
+                    <figcaption>Dépôt GitHub utilisé pour enregistrer et partager le site e-portfolio.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="{{ asset('image/2222.png') }}" alt="Historique des commits Git">
+                    <figcaption>Historique des commits permettant de suivre l’évolution du projet.</figcaption>
+                </figure>
+            </div>
+
+            <div class="service-summary">
+                <h4>Synthèse de l’apprentissage</h4>
+                <p>
+                    Cet apprentissage m’a permis de comprendre l’intérêt d’un environnement de développement structuré
+                    pour travailler de manière plus rigoureuse et plus collaborative. J’ai appris à utiliser Git et GitHub
+                    pour suivre l’évolution de mon projet, sécuriser mon travail et préparer une méthode de développement
+                    proche de celle utilisée en entreprise. Cette expérience m’a rendu plus organisé, plus prudent dans
+                    mes sauvegardes et plus attentif à la qualité de mon historique de travail.
+                </p>
+            </div>
+        </div>
+    </div>
+</article>
+<div class="service-content">
+    <h1>Synthèse globale RT3 – Créer des outils et des applications informatiques pour les R&amp;T</h1>
+
+    <div class="service-image-shell">
+        <img src="{{ asset('image/fin.png') }}" alt="Illustration de la synthèse globale RT3">
+    </div>
+
+    <p class="service-ac">
+        Concevoir, développer et améliorer des outils informatiques adaptés aux besoins des réseaux et télécommunications.
+    </p>
+
+    <p class="service-text">
+        Au cours de cette ressource, j’ai développé des outils et des applications informatiques en lien avec les réseaux
+        et les télécommunications. Ce travail m’a permis de mettre en pratique des notions de programmation, de traitement
+        de données et de logique algorithmique tout en les appliquant à des besoins concrets du domaine R&amp;T.
+    </p>
+
+    <div class="service-tags">
+        <span>Python</span>
+        <span>C</span>
+        <span>Algorithmes</span>
+        <span>Développement</span>
+        <span>Automatisation</span>
+        <span>Réseaux</span>
+    </div>
+
+    <button type="button" class="service-btn" data-target="detail-rt3">
+        Voir le détail
+    </button>
+
+    <div id="detail-rt3" class="service-detail">
+        <h4>Appréciation critique de la ressource</h4>
+
+        <p>
+            Cette ressource m’a d’abord appris à analyser un besoin technique avant de commencer le développement.
+            Cette étape m’a aidé à mieux comprendre ce que devait faire l’outil, quelles données il devait traiter
+            et comment organiser ses fonctionnalités de manière cohérente. J’ai ainsi compris qu’un bon programme ne
+            dépend pas seulement du code, mais aussi de la qualité de la réflexion en amont.
+        </p>
+
+        <p>
+            J’ai ensuite travaillé sur la conception et la réalisation d’outils adaptés à différents cas d’usage.
+            J’ai mobilisé des langages comme Python et C pour créer des programmes capables d’automatiser certaines
+            tâches, de manipuler des données et de faciliter des traitements utiles dans un contexte réseau.
+            Cela m’a permis de progresser dans la structuration du code, l’utilisation de fonctions, la gestion des
+            entrées et sorties, ainsi que la réutilisation de blocs de programme.
+        </p>
+
+        <p>
+            Cette ressource m’a aussi appris à tester, corriger et améliorer mes réalisations. J’ai rencontré des
+            erreurs de logique, de syntaxe ou d’exécution, que j’ai dû analyser puis corriger méthodiquement.
+            Cette démarche m’a rendu plus rigoureux et plus autonome, car j’ai compris l’importance de vérifier
+            chaque étape du développement pour obtenir un résultat fiable.
+        </p>
+
+        <p>
+            J’ai également renforcé ma capacité à documenter et rendre lisible un outil informatique. En travaillant
+            sur mes programmes, j’ai appris à soigner l’organisation du code, à nommer clairement mes variables
+            et à structurer mes traitements pour qu’ils soient plus faciles à relire et à modifier.
+            Cette compétence est essentielle dans un environnement professionnel, où un outil doit pouvoir être
+            compris et maintenu par d’autres personnes.
+        </p>
+
+        <p>
+            Enfin, cette ressource m’a montré que la création d’outils informatiques pour les R&amp;T ne consiste pas
+            seulement à programmer, mais aussi à répondre à un besoin concret avec une solution simple, fonctionnelle
+            et évolutive. J’en retiens une meilleure maîtrise des bases de développement, une méthode de travail plus
+            efficace et une vision plus claire du rôle de l’informatique dans les métiers du réseau et des
+            télécommunications.
+        </p>
+    </div>
+</div>
+    </div>
+</section>
 
     <div class="services-footer">
         <a href="{{ path('contact') }}" class="btn-primary">
@@ -241,19 +1393,66 @@
         </a>
     </div>
 </section>
+
+
+
+
 {% endblock %}
 
+
 {% block page_styles %}
+<style>
+.competence-block {
+    margin-top: 5rem;
+    padding: 3rem 0;
+    background: rgba(15, 23, 42, 0.35);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    border-radius: 24px;
+}
+
+.competence-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.competence-title {
+    color: #f5f5f7;
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0;
+}
+
+.competence-underline {
+    width: 78px;
+    height: 4px;
+    background: #ff8a2a;
+    margin: 1rem auto 0;
+    border-radius: 999px;
+}
+
+
+
+.competence-underline {
+    width: 78px;
+    height: 4px;
+    background: #ff8a2a;
+    margin: 1rem auto 0 auto;
+    border-radius: 50px;
+    box-shadow: 0 0 8px rgba(255, 138, 42, 0.25);
+}
 .services-section {
     max-width: 1120px;
     margin: 0 auto;
+    padding: 0 0.5rem;
 }
 
 .services-title {
     text-align: center;
-    margin-bottom: 1.4rem;
-    font-size: 1.6rem;
-    letter-spacing: 0.18em;
+    margin-bottom: 1.2rem;
+    font-size: 1.7rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--text-main);
     position: relative;
@@ -262,31 +1461,32 @@
 .services-title::after {
     content: '';
     display: block;
-    width: 80px;
+    width: 88px;
     height: 3px;
-    margin: 0.6rem auto 0;
+    margin: 0.7rem auto 0;
     border-radius: 999px;
     background: linear-gradient(90deg, #f97316, #fb923c);
 }
 
 .services-intro {
-    max-width: 640px;
-    margin: 0 auto 1.6rem;
+    max-width: 760px;
+    margin: 0 auto 1.8rem;
     text-align: center;
     color: var(--text-muted);
-    font-size: 0.95rem;
+    font-size: 0.96rem;
+    line-height: 1.7;
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: 1fr;
     gap: 1.6rem;
 }
 
 .service-card {
     background: rgba(15, 23, 42, 0.97);
     border-radius: 20px;
-    border: 1px solid rgba(148, 163, 184, 0.45);
+    border: 1px solid rgba(148, 163, 184, 0.42);
     box-shadow: 0 22px 55px rgba(15, 23, 42, 0.95);
     overflow: hidden;
     display: flex;
@@ -295,16 +1495,16 @@
 }
 
 .service-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-4px);
     box-shadow: 0 26px 65px rgba(15, 23, 42, 0.98);
-    border-color: rgba(249, 115, 22, 0.8);
+    border-color: rgba(249, 115, 22, 0.75);
 }
 
 .service-image-shell {
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16 / 7;
     background: radial-gradient(circle at 0 0, rgba(249,115,22,0.18), transparent 55%),
-                radial-gradient(circle at 100% 100%, rgba(56,189,248,0.18), transparent 55%);
+                radial-gradient(circle at 100% 100%, rgba(56,189,248,0.16), transparent 55%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -318,43 +1518,44 @@
 }
 
 .service-content {
-    padding: 1.1rem 1.2rem 1.2rem;
+    padding: 1.2rem 1.25rem 1.3rem;
     display: flex;
     flex-direction: column;
-    gap: 0.45rem;
+    gap: 0.5rem;
 }
 
 .service-card h3 {
-    font-size: 1.05rem;
+    font-size: 1.08rem;
     margin: 0;
     color: var(--text-main);
 }
 
 .service-ac {
     margin: 0;
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     font-weight: 500;
     color: var(--accent);
 }
 
 .service-text {
     margin: 0.2rem 0 0.3rem;
-    font-size: 0.9rem;
+    font-size: 0.92rem;
+    line-height: 1.65;
     color: var(--text-muted);
 }
 
 .service-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.35rem;
-    margin-top: 0.2rem;
+    gap: 0.4rem;
+    margin-top: 0.25rem;
 }
 
 .service-tags span {
     font-size: 0.78rem;
-    padding: 0.16rem 0.55rem;
+    padding: 0.18rem 0.6rem;
     border-radius: 999px;
-    border: 1px solid rgba(148, 163, 184, 0.6);
+    border: 1px solid rgba(148, 163, 184, 0.55);
     color: var(--text-muted);
     background: rgba(15, 23, 42, 0.96);
 }
@@ -362,12 +1563,12 @@
 .service-btn {
     margin-top: 0.7rem;
     align-self: flex-start;
-    padding: 0.45rem 1.1rem;
+    padding: 0.48rem 1.1rem;
     border-radius: 999px;
     border: 1px solid rgba(148, 163, 184, 0.7);
     background: transparent;
     color: var(--text-main);
-    font-size: 0.82rem;
+    font-size: 0.84rem;
     font-weight: 500;
     cursor: pointer;
     display: inline-flex;
@@ -385,46 +1586,128 @@
 
 .service-detail {
     display: none;
-    margin-top: 0.5rem;
-    padding-top: 0.5rem;
-    border-top: 1px dashed rgba(148, 163, 184, 0.6);
-    font-size: 0.86rem;
+    margin-top: 0.9rem;
+    padding-top: 1rem;
+    border-top: 1px dashed rgba(148, 163, 184, 0.45);
+    font-size: 0.9rem;
     color: var(--text-muted);
+}
+
+.service-detail h4 {
+    margin: 0 0 0.55rem;
+    font-size: 0.95rem;
+    color: var(--text-main);
+}
+
+.service-detail p {
+    margin: 0 0 0.85rem;
+    line-height: 1.7;
+}
+
+.service-list {
+    margin: 0 0 1rem;
+    padding-left: 1.2rem;
+    color: var(--text-muted);
+}
+
+.service-list li {
+    margin-bottom: 0.4rem;
+    line-height: 1.6;
+}
+
+.service-proof,
+.service-summary {
+    margin-top: 1rem;
+    padding: 0.95rem 1rem;
+    border-radius: 14px;
+    background: rgba(15, 23, 42, 0.92);
+    border: 1px solid rgba(148, 163, 184, 0.22);
+}
+
+.service-proof p,
+.service-summary p {
+    margin-bottom: 0;
+}
+
+.service-images {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.9rem;
+}
+
+.service-images figure {
+    margin: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    background: rgba(15, 23, 42, 0.94);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.service-images img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+.service-images figcaption {
+    padding: 0.58rem 0.72rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.45;
 }
 
 .services-footer {
     margin-top: 2rem;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 0.8rem;
 }
 
-/* Responsive */
 @media (max-width: 700px) {
     .services-title {
-        font-size: 1.4rem;
-        letter-spacing: 0.12em;
+        font-size: 1.35rem;
+        letter-spacing: 0.08em;
     }
+
+    .service-image-shell {
+        aspect-ratio: 16 / 9;
+    }
+
+    .service-content {
+        padding: 1rem;
+    }
+
+    .service-images {
+        grid-template-columns: 1fr;
+    }
+
+    .service-images img {
+        height: 190px;
+    }
+    
 }
+</style>
 {% endblock %}
 
 {% block javascripts %}
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const buttons = document.querySelectorAll('.service-btn');
+document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.service-btn');
 
-        buttons.forEach(button => {
-            button.addEventListener('click', () => {
-                const targetId = button.getAttribute('data-target');
-                const detail = document.getElementById(targetId);
-                if (!detail) return;
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetId = button.getAttribute('data-target');
+            const detail = document.getElementById(targetId);
+            if (!detail) return;
 
-                const isVisible = detail.style.display === 'block';
-                detail.style.display = isVisible ? 'none' : 'block';
-                button.textContent = isVisible ? 'Voir le détail' : 'Masquer le détail';
-            });
+            const isVisible = detail.style.display === 'block';
+            detail.style.display = isVisible ? 'none' : 'block';
+            button.textContent = isVisible ? 'Voir le détail' : 'Masquer le détail';
         });
     });
+});
 </script>
 {% endblock %}
-
