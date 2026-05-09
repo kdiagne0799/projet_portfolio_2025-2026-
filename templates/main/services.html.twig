@@ -10,8 +10,6 @@
         <div class="competence-underline"></div>
     </div>
 
-
-
     <div class="services-intro">
         <p>
             Cette compétence présente les premiers apprentissages développés dans le cadre du BUT Réseaux & Télécommunications.
@@ -23,7 +21,7 @@
     <div class="services-grid">
         <article class="service-card">
             <div class="service-image-shell">
-                <img src="{{ asset('image/rt1-administrer-main.png') }}" alt="Administrer les Réseaux et l’Internet">
+                <img src="{{ asset('image/001.png') }}" alt="Administrer les Réseaux et l’Internet">
             </div>
 
             <div class="service-content">
@@ -88,34 +86,41 @@
                     </p>
 
                     <div class="service-proof">
-                        <p><strong>Preuves à ajouter :</strong></p>
+                        <p><strong>Preuves présentées :</strong></p>
                         <ul class="service-list">
-                            <li>Schéma de la topologie réseau.</li>
-                            <li>Capture de la connexion console sur le switch.</li>
-                            <li>Capture de la configuration VLAN / trunk.</li>
-                            <li>Capture d’un test de connectivité réussi.</li>
+                            <li>Câble console Cisco utilisé pour accéder au switch.</li>
+                            <li>Schéma du réseau VLAN mis en place.</li>
+                            <li>Commande <code>show interfaces trunk</code> pour vérifier le trunk.</li>
+                            <li>Test ping réussi après configuration.</li>
+                            <li>Récupération de la configuration via un serveur TFTP.</li>
+                            <li>Configuration des VLANs et affectation des ports.</li>
                         </ul>
                     </div>
 
                     <div class="service-images">
                         <figure>
-                            <img src="{{ asset('image/ac1103-topologie-reseau.png') }}" alt="Topologie du réseau local">
-                            <figcaption>Topologie du réseau local utilisé pendant le TP.</figcaption>
+                            <img src="{{ asset('image/002.png') }}" alt="Câble console Cisco et connexion au switch">
+                            <figcaption>Connexion au switch Cisco à l’aide du câble console.</figcaption>
                         </figure>
 
                         <figure>
-                            <img src="{{ asset('image/ac1103-console-switch.png') }}" alt="Connexion console sur switch Cisco">
-                            <figcaption>Connexion console au switch Cisco via PuTTY.</figcaption>
+                            <img src="{{ asset('image/003.png') }}" alt="Schéma du réseau VLAN">
+                            <figcaption>Schéma du réseau local avec segmentation en VLAN.</figcaption>
                         </figure>
 
                         <figure>
-                            <img src="{{ asset('image/ac1103-vlan-trunk.png') }}" alt="Configuration VLAN et trunk">
-                            <figcaption>Configuration des VLANs et du lien trunk entre les switchs.</figcaption>
+                            <img src="{{ asset('image/004.png') }}" alt="Commande show interfaces trunk">
+                            <figcaption>Vérification du lien trunk avec la commande <code>show interfaces trunk</code>.</figcaption>
                         </figure>
 
                         <figure>
-                            <img src="{{ asset('image/ac1103-test-connectivite.png') }}" alt="Test de connectivité réussi">
-                            <figcaption>Validation de la connectivité réseau après configuration.</figcaption>
+                            <img src="{{ asset('image/005.png') }}" alt="Test ping réussi">
+                            <figcaption>Résultat d’un test ping réussi après configuration du réseau.</figcaption>
+                        </figure>
+
+                        <figure>
+                            <img src="{{ asset('image/ac1103-tftp-config.png') }}" alt="Récupération de la configuration sur serveur TFTP">
+                            <figcaption>Récupération ou sauvegarde de la configuration via un serveur TFTP.</figcaption>
                         </figure>
                     </div>
 
@@ -131,6 +136,7 @@
             </div>
         </article>
     </div>
+</section>
 
 
 <article class="service-card">
